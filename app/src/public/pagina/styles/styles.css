@@ -8619,11 +8619,15 @@ h3 {
 }
 
 .fondo {
-  background-color: darkorange;
+  background-color: #fb6207;
 }
 
 .fondo-juegos {
-  background-color: #B1B1B1;
+  background-color: #dfdce3;
+}
+
+.fondo-black{
+  background-color: #434343;
 }
 
 li a {

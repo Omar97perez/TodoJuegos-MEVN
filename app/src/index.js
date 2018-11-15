@@ -1,19 +1,38 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const mongoose = require('mongoose');
 
 app.set('port', process.env.PORT || 3000);
 app.use(express.json());
 
-// conexión bbdd
-const mongoose = require('mongoose');
-// remoteUrl : `mongodb://${databaseUser}:${databasePassword}@${databaseHost}:${databasePort}/${databaseName}?${databaseConnectionOpts}`,
-mongoose.connect('mongodb://myTester:xyz123@10.6.128.98:27017/test?'); 
 // rutas
 app.use('/api/users', require('./routes/users'));
 // static
 app.use(express.static(path.join(__dirname, 'public')));;
 
-app.listen(app.get('port'), () => {
-    console.log(`server listening on port ${app.get('port')}`);
-})
+// conexión bbdd
+let databaseUser = "myTester";
+let databasePassword = "xyz123";
+let databaseHost = "10.6.128.98";
+//let databaseHost = "localhost";
+let databasePort = "27017";
+let databaseName = "test";
+let databaseConnectionOpts = "";
+let remoteUrl = `mongodb://${databaseUser}:${databasePassword}@${databaseHost}:${databasePort}/${databaseName}?${databaseConnectionOpts}`
+mongoose.connect(remoteUrl, (err,res) => {
+    if(!err){
+        console.log("Mongoose Connected");
+        app.listen(app.get('port'), ()=>{
+            console.log(`Server API REST listening in http://`);
+        });
+    }
+    else {
+        throw err;
+}
+});
+
+
+// app.listen(app.get('port'), () => {
+//     console.log(`server listening on port ${app.get('port')}`);
+// })

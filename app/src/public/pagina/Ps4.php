@@ -3,57 +3,30 @@
   <head>
     <meta charset="utf-8">
     <link rel="icon" href="img/Logotipo.png">
-    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
+  <header>
+    <?php require 'Header.php' ?>
+  </header>
+
   <body class="fondo">
-    <div class="container-center-fluid">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-2">
         </div>
-
-
         <div class="col-8 fondo-juegos">
-          <nav class="navbar navbar-expand-lg justify-content-between navbar-light">
-            <a href="index.html">
-              <img src="../img/Logotipo.png" alt="Logotipo" class="logo">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav enlaces-navbar">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Mi cuenta</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Juegos</a>
-                  <div class="dropdown-menu" aria-labelledby>
-                    <a class="dropdown-item" href="#">PC</a>
-                    <a class="dropdown-item" href="#">PS4</a>
-                    <a class="dropdown-item" href="#">X-Box One</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Accesorios</a>
-                </li>
-              </ul>
-            </div>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-              <button class="btn my-2 my-sm-0" type="submit">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
-            </form>
-          </nav>
           <!-- Escribir de aqui para abajo -->
 
           <!-- Nuevo carousel -->
           <div class="container-center">
             <div class="row">
               <div class="col-12">
-                <h2>Las mejores ofertas <b>Xbox One</b></h2>
+                <h2>Las mejores ofertas <b>PS4</b></h2>
                 <div id="carouselps4" class="carousel slide" data-ride="carousel" data-interval="0">
                 <!-- Indicador del carousel -->
                 <ol class="carousel-indicators">
@@ -69,7 +42,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -93,7 +66,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -117,7 +90,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -141,7 +114,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -170,7 +143,10 @@
                 <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                   <i class="fa fa-angle-right"></i>
                 </a>
-            </div><!-- Final carousel -->
+            </div>
+              </div>
+            </div>
+          </div>
           
           <!-- Nuevo carousel -->
           <div class="container-center">
@@ -192,7 +168,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -216,7 +192,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -240,7 +216,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -264,7 +240,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -293,7 +269,11 @@
                 <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                   <i class="fa fa-angle-right"></i>
                 </a>
-            </div><!-- Final carousel -->
+            </div>
+              </div>
+            </div>
+          </div>
+            <!-- Final carousel -->
 
           <!-- Nuevo carousel -->
           <div class="container-center">
@@ -315,7 +295,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -339,7 +319,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -363,7 +343,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -387,7 +367,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -416,7 +396,11 @@
                 <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                   <i class="fa fa-angle-right"></i>
                 </a>
-            </div><!-- Final carousel -->
+            </div>
+              </div>
+            </div>
+          </div>
+            <!-- Final carousel -->
 
           <!-- Nuevo carousel -->
           <div class="container-center">
@@ -438,7 +422,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -462,7 +446,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -486,7 +470,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -510,7 +494,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -539,7 +523,11 @@
                 <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                   <i class="fa fa-angle-right"></i>
                 </a>
-            </div><!-- Final carousel -->
+            </div>
+              </div>
+            </div>
+          </div>
+            <!-- Final carousel -->
 
             <!-- Nuevo carousel -->
           <div class="container-center">
@@ -561,7 +549,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -585,7 +573,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -609,7 +597,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -633,7 +621,7 @@
                       <div class="col-sm-3">
                         <div class="thumb-wrapper">
                           <div class="img-box">
-                            <img src="../img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                            <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
                           </div>
                           <div class="thumb-content">
                             <h4>Fifa 19</h4>
@@ -662,69 +650,24 @@
                 <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
                   <i class="fa fa-angle-right"></i>
                 </a>
-            </div><!-- Final carousel -->
+            </div>
+              </div>
+            </div>
+          </div>
+            <!-- Final carousel -->
           </div>
         </div>
 
         </div>          
+       
+
+<div class="col-2">
         </div>
 
-        <div class="col-2">
-        </div>
-      </div>
-    </div>
   </body>
 
-  <footer class="page-footer font-small pt-4">
-    <!-- Footer Links -->
-    <div class="container-center-fluid text-center text-md-left">
-      <!-- Grid row -->
-      <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-2">
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-8 fondo-juegos">
-          <div class="row">
-            <div class="col-3 footer-div">
-              <p class="titulo-footer">Contáctanos:</p>
-              <p>Teléfono: 922-64-85-12</p>
-              <p>Dirección: C/ Adolfo Suárez Nº10</p>
-              <p>Email: todojuegos@gmail.com</p>
-            </div>
-
-            <div class="col-6">
-              <img src="../img/Logotipo.png" alt="Logotipo" class="img-todojuegos">
-              <div  class="footer-div">
-                <div class="footer-copyright text-center py-3">
-                  © 2018 Copyright
-                </div>
-              </div>
-            </div>
-
-            <div class="col-3 footer-div">
-              <h5>Redes Sociales</h5>
-              <i class="fa fa-facebook-square" style="font-size:24px"></i>
-              <i class="fa fa-twitter-square" style="font-size:24px"></i>
-              <i class="fa fa-google-plus-square" style="font-size:24px"></i>
-              <i class="fa fa-instagram" style="font-size:24px"></i>
-              <i class="fa fa-linkedin-square" style="font-size:24px"></i>
-            </div>
-          </div>
-        </div>
-          <!-- Grid column -->
-
-        <div class="col-2">
-        </div>
-
-      </div>
-      <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
+  <footer class="page-footer font-small " style="margin-top:-20px;">
+      <?php require 'Footer.php' ?>
   </footer>
+
 </html>

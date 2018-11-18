@@ -8793,7 +8793,6 @@ h2::after {
 
 .shopping-cart {
   width: 750px;
-  height: 423px;
   margin: 80px auto;
   background: #FFFFFF;
   box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
@@ -8826,19 +8825,31 @@ h2::after {
   border-bottom:  1px solid #E1E8EE;
 }
 
-.buttons {
+.bttns {
   position: relative;
   padding-top: 30px;
   margin-right: 60px;
 }
 
 .delete-btn {
-  display: inline-block;
-  cursor: pointer;
-  width: 18px;
-  height: 17px;
-  background: url("img/delete-icn.svg") no-repeat center;
-  margin-right: 20px;
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+
+.delete-btn:hover{
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  /*background: rgb(255, 0, 0);*/
+  font-weight: 300;
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
 }
 
 .like-btn {
@@ -8960,9 +8971,65 @@ input:focus {
     text-align: center;
     margin: 6px 0;
   }
-  .buttons {
+  .bttns {
     margin-right: 20px;
   }
 }
 
+.buy-btn{
+  float: right; 
+  background-color: transparent;  
+  box-shadow: none; 
+  border: 0px;
+  color: #43484D;
+}
+
+.buy-btn:hover{
+  float: right; 
+  background-color: transparent;  
+  box-shadow: none; 
+  border: 0px;
+  color: #43484D;
+}
+
+.credit-card-box .panel-title {
+  display: inline;
+  font-weight: bold;
+}
+.credit-card-box .form-control.error {
+  border-color: red;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+font-weight: bold;
+color: red;
+padding: 2px 8px;
+margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+font-weight: bold;
+color: red;
+padding: 2px 8px;
+margin-top: 2px;
+}
+.credit-card-box label {
+  display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+  display: table;
+}
+.credit-card-box .display-tr {
+  display: table-row;
+}
+.credit-card-box .display-td {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+  min-width: 180px;
+}
 /*# sourceMappingURL=styles.css.map */

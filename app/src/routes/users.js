@@ -1,16 +1,12 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const userCtrl = require('../controllers/users')
+const auth = require('../middlewares/auth')
+const api = express.Router()
 
-const User = require('../models/User');
+api.post('/signup', userCtrl.signUp)
+api.post('/signin', userCtrl.signIn)
+api.get('/private', auth, (req, res) => {
+  res.status(200).send({ message: 'Tienes acceso' })
+})
 
-router.get('/', async(req,res) => {
-    const users = await User.find({});
-    res.json(users);
-});
-
-router.get('/:id', async (req, res) => {
-  const user = await User.findById(req.params.id);
-  res.json(user);
-});
-
-module.exports = router;
+module.exports = api

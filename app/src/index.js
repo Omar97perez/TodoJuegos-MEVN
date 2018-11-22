@@ -1,36 +1,21 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-const mongoose = require('mongoose');
+'use strict'
 
-app.set('port', process.env.PORT || 3000);
-app.use(express.json());
+const mongoose = require('mongoose')
+const config = require('./config/config_db')
+const app = require('./app')
+// app.set('port', process.env.PORT || 3000)
+const port = process.env.PORT || 3000
 
-// rutas
-app.use('/api/users', require('./routes/users'));
-// static
-app.use(express.static(path.join(__dirname, 'public')));;
-
-// conexión bbdd
-let databaseUser = "myTester";
-let databasePassword = "xyz123";
-let databaseHost = "10.6.128.98";
-//let databaseHost = "localhost";
-let databasePort = "27017";
-let databaseName = "test";
-let databaseConnectionOpts = "";
-let remoteUrl = `mongodb://${databaseUser}:${databasePassword}@${databaseHost}:${databasePort}/${databaseName}?${databaseConnectionOpts}`
-mongoose.connect(remoteUrl, (err,res) => {
-    if(!err){
-        console.log("Mongoose Connected");
-        app.listen(app.get('port'), ()=>{
-            console.log(`Server API REST listening in http://`);
-        });
-    }
-    else {
-        throw err;
-}
-});
+mongoose.connect(config.db, (err, res) => {
+  if (!err) {
+    console.log('Mongoose Connected')
+    app.listen(port, () => {
+      console.log(`Server API REST listening in http://localhost/${port}`)
+    })
+  } else {
+    throw err
+  }
+})
 
 /*  JS Carrito */
 

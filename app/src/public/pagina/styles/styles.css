@@ -167,7 +167,7 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 a:hover {
-  color: #0056b3;
+  color: #B1B1B1;
   text-decoration: underline;
 }
 
@@ -2488,15 +2488,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-success {
-  color: #28a745;
+  color: #434343;
   background-color: transparent;
   background-image: none;
-  border-color: #28a745;
+  border-color: #434343;
 }
 .btn-outline-success:hover {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
+  color: #434343;
+  background-color: darkorange;
+  border-color: darkorange;
 }
 .btn-outline-success:focus, .btn-outline-success.focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);

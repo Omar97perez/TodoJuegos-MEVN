@@ -6,8 +6,6 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -169,7 +167,7 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 a:hover {
-  color: #B1B1B1;
+  color: #0056b3;
   text-decoration: underline;
 }
 
@@ -472,7 +470,7 @@ mark,
   color: #6c757d;
 }
 .blockquote-footer::before {
-  content: "— ";
+  content: "— ";
 }
 
 .img-fluid {
@@ -2490,15 +2488,15 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-success {
-  color: #434343;
+  color: #28a745;
   background-color: transparent;
   background-image: none;
-  border-color: #434343;
+  border-color: #28a745;
 }
 .btn-outline-success:hover {
-  color: #434343;
-  background-color: darkorange;
-  border-color: darkorange;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
 }
 .btn-outline-success:focus, .btn-outline-success.focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
@@ -8621,11 +8619,15 @@ h3 {
 }
 
 .fondo {
-  background-color: darkorange;
+  background-color: #fb6207;
 }
 
 .fondo-juegos {
-  background-color: #B1B1B1;
+  background-color: #dfdce3;
+}
+
+.fondo-black{
+  background-color: #434343;
 }
 
 li a {
@@ -9030,4 +9032,3 @@ margin-top: 2px;
 .credit-card-box .panel-heading img {
   min-width: 180px;
 }
-/*# sourceMappingURL=styles.css.map */

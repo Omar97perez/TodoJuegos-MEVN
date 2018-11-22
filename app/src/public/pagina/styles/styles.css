@@ -8645,7 +8645,6 @@ li a {
   padding-top: 200px;
 }
 
-<<<<<<< HEAD
 h2 {
   color: #000;
   font-size: 26px;
@@ -8683,7 +8682,7 @@ h2::after {
   width: 100%;
   position: relative;
 }
-.carousel .item img { 
+.carousel .item img {
   max-width: 100%;
   max-height: 100%;
   display: inline-block;
@@ -8774,10 +8773,10 @@ h2::after {
   border-radius: 50%;
   border-color: transparent;
 }
-.carousel-indicators li { 
+.carousel-indicators li {
   background: rgba(0, 0, 0, 0.2);
 }
-.carousel-indicators li.active {  
+.carousel-indicators li.active {
   background: rgba(0, 0, 0, 0.6);
 }
 .star-rating li {
@@ -8976,17 +8975,17 @@ input:focus {
 }
 
 .buy-btn{
-  float: right; 
-  background-color: transparent;  
-  box-shadow: none; 
+  float: right;
+  background-color: transparent;
+  box-shadow: none;
   border: 0px;
   color: #43484D;
 }
 
 .buy-btn:hover{
-  float: right; 
-  background-color: transparent;  
-  box-shadow: none; 
+  float: right;
+  background-color: transparent;
+  box-shadow: none;
   border: 0px;
   color: #43484D;
 }
@@ -9031,6 +9030,4 @@ margin-top: 2px;
 .credit-card-box .panel-heading img {
   min-width: 180px;
 }
-=======
->>>>>>> master
 /*# sourceMappingURL=styles.css.map */

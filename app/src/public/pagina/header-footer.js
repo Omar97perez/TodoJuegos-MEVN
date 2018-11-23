@@ -74,9 +74,8 @@ Vue.component('header-vue', {
 
 Vue.component('footer-vue', {
   template: `
-    <footer class="page-footer font-small pt-4" style="margin-top:-15px;">
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left">
+    <div class="container-fluid text-center text-md-left page-footer font-small pt-4" style="margin-top:-15px;">
       <!-- Grid row -->
       <div class="row">
 
@@ -215,8 +214,6 @@ Vue.component('footer-vue', {
 
     </div>
     <!-- Footer Links -->
-
-  </footer>
 
   `
 })

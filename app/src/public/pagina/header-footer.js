@@ -14,54 +14,54 @@ Vue.component('header-vue', {
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
                 <i>
-                  <i class="fa fa-user col-md-5" style="font-size:24px"></i>
-                  <i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i>
+                  <a href="inicio_sesion.html"><i class="fa fa-user col-md-5" style="font-size:24px"></i></a>
+                  <a href="#"><i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i></a>
                 </i>
           </nav>
 
           <nav class="navbar navbar-expand-lg justify-content-between" style="margin-right:-26px;margin-left:-26px;margin-top:-31px;">
                 <div class="collapse navbar-collapse" id="navbarNavDropdown"  style="background-color:#434343">
-                  <ul class="navbar-nav enlaces-navbar">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VideoJuegos</a>
-                    <div class="dropdown-menu" aria-labelledby>
-                      <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
-                      <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
-                      <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesorios</a>
-                    <div class="dropdown-menu" aria-labelledby>
-                      <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
-                      <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
-                      <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seminuevos</a>
-                    <div class="dropdown-menu" aria-labelledby>
-                      <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
-                      <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
-                      <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Merchandising</a>
-                    <div class="dropdown-menu" aria-labelledby>
-                      <a class="dropdown-item" href="#">Figuras</a>
-                      <a class="dropdown-item" href="#">Figuras Pop</a>
-                      <a class="dropdown-item" href="#">Ropa</a>
-                      <a class="dropdown-item" href="#">Peluches</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electronica</a>
-                    <div class="dropdown-menu" aria-labelledby>
-                      <a class="dropdown-item" href="#">Smartphones</a>
-                      <a class="dropdown-item" href="#">Tablets</a>
-                    </div>
-                  </li>
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VideoJuegos</a>
+                      <div class="dropdown-menu" aria-labelledby>
+                        <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
+                        <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
+                        <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesorios</a>
+                      <div class="dropdown-menu" aria-labelledby>
+                        <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
+                        <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
+                        <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seminuevos</a>
+                      <div class="dropdown-menu" aria-labelledby>
+                        <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
+                        <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
+                        <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Merchandising</a>
+                      <div class="dropdown-menu" aria-labelledby>
+                        <a class="dropdown-item" href="#">Figuras</a>
+                        <a class="dropdown-item" href="#">Figuras Pop</a>
+                        <a class="dropdown-item" href="#">Ropa</a>
+                        <a class="dropdown-item" href="#">Peluches</a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electronica</a>
+                      <div class="dropdown-menu" aria-labelledby>
+                        <a class="dropdown-item" href="#">Smartphones</a>
+                        <a class="dropdown-item" href="#">Tablets</a>
+                      </div>
+                    </li>
                   </ul>
                 </div>
 

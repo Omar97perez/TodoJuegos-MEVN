@@ -17,7 +17,24 @@ mongoose.connect(config.db, (err, res) => {
   }
 })
 
-/*  JS Carrito */
+/* JS Carrito */
+
+/* JS Actualizar lista de juegos*/
+
+FilePond.registerPlugin(
+	
+  FilePondPluginFileEncode,
+	
+	FilePondPluginFileValidateSize,
+	
+	FilePondPluginImageExifOrientation,
+	
+  FilePondPluginImagePreview
+);
+
+FilePond.create(
+	document.querySelector('input')
+);
 
 // app.listen(app.get('port'), () => {
 //     console.log(`server listening on port ${app.get('port')}`);

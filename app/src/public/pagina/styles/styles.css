@@ -8920,7 +8920,7 @@ h2::after {
   font-weight: 300;
 }
 
-button[class*=btn] {
+button[class*=bttns] {
   width: 30px;
   height: 30px;
   background-color: #E1E8EE;
@@ -9031,4 +9031,26 @@ margin-top: 2px;
 /* Just looks nicer */
 .credit-card-box .panel-heading img {
   min-width: 180px;
+}
+
+.filepond--drop-label {
+	color: #4c4e53;
+}
+
+.filepond--label-action {
+	text-decoration-color: #babdc0;
+}
+
+.filepond--panel-root {
+	border-radius: 2em;
+	background-color: #edf0f4;
+	height: 1em;
+}
+
+.filepond--item-panel {
+	background-color: #595e68;
+}
+
+.filepond--drip-blob {
+	background-color: #7f8a9a;
 }

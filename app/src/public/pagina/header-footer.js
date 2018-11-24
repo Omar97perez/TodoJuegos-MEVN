@@ -14,7 +14,7 @@ Vue.component('header-vue', {
                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                 </form>
                 <i>
-                  <a href="inicio_sesion.html"><i class="fa fa-user col-md-5" style="font-size:24px"></i></a>
+                  <a href="../pagina/Inicio_sesion.html"><i class="fa fa-user col-md-5" style="font-size:24px"></i></a>
                   <a href="#"><i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i></a>
                 </i>
           </nav>

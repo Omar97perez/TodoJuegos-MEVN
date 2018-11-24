@@ -2493,10 +2493,10 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-success {
-  color: #434343;
-  background-color: #E1E8EE;
+  color: white;
+  background-color: #434343;
   background-image: none;
-  border-color: #434343;
+  border-color: white;
 }
 .btn-outline-success:hover {
   color: #434343;

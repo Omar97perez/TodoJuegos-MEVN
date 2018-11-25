@@ -20,7 +20,7 @@ mongoose.connect(config.db, (err, res) => {
 /* JS Carrito */
 
 /* JS Actualizar lista de juegos*/
-
+  /*Drag and drop*/
 FilePond.registerPlugin(
 	
   FilePondPluginFileEncode,
@@ -35,6 +35,9 @@ FilePond.registerPlugin(
 FilePond.create(
 	document.querySelector('input')
 );
+
+  /*Hide form*/
+//this toggles the visibility of our parent permission fields depending on the current selected value of the underAge field
 
 // app.listen(app.get('port'), () => {
 //     console.log(`server listening on port ${app.get('port')}`);

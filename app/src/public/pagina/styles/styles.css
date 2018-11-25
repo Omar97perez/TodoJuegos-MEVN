@@ -166,6 +166,11 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
+
+a i{
+  color: #323232;
+}
+
 a:hover {
   color: #B1B1B1;
   text-decoration: underline;
@@ -2488,10 +2493,10 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-success {
-  color: #434343;
-  background-color: transparent;
+  color: white;
+  background-color: #434343;
   background-image: none;
-  border-color: #434343;
+  border-color: white;
 }
 .btn-outline-success:hover {
   color: #434343;
@@ -3531,6 +3536,7 @@ input[type=button].btn-block {
 }
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
+  color: white;
 }
 .nav-link.disabled {
   color: #6c757d;

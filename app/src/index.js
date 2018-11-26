@@ -22,13 +22,13 @@ mongoose.connect(config.db, (err, res) => {
 /* JS Actualizar lista de juegos*/
   /*Drag and drop*/
 FilePond.registerPlugin(
-	
+
   FilePondPluginFileEncode,
-	
+
 	FilePondPluginFileValidateSize,
-	
+
 	FilePondPluginImageExifOrientation,
-	
+
   FilePondPluginImagePreview
 );
 

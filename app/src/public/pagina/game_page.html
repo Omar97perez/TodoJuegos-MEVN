@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="img/Logotipo.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+
+  <header>
+    <?php require 'Header.php' ?>
+  </header>
+
+  <body class="fondo">
+    <div id="app">
+      <header-vue></header-vue>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-2">
+          </div>
+          <div class="col-8 fondo-juegos">
+            <!-- Escribir de aqui para abajo -->
+            <!-- Nuevo carousel -->
+            <div class="container-center">
+              <div class="row">
+                  <div class="col-4 img-box">
+                      <img src="img/fifa19.jpg" class="img-responsive img-fluid" alt="">
+                  </div>
+                  <div class="col-8">
+                    <h2><b>Fifa 19</b></h2><br>
+                    <b>Plataforma:</b> Ps4<br>
+                    <b>Stock: </b><p class="text-success">Disponible</p>
+                    <b>Precio: </b><p class="item-price"><strike>59,99€</strike> <span>39.99€</span></p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a><br><br>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="información-tab" data-toggle="tab" href="#información" role="tab" aria-controls="información" aria-selected="true">Información</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane show active" id="información" role="tabpanel" aria-labelledby="información-tab">
+                        <h3>¿Qué novedades trae FIFA 19?</h3>
+                        Esta edición pinta que será un juegazo épico con las licencias oficiales de las competiciones UEFA y las nuevas mecánicas que han desarrollado desde EA Sports.
+                        <br><br>
+                        Estas son las novedades más significativas del FIFA 19:
+                        <br><br>
+                        <ul>
+                            <li>Podrás jugar con tu equipo la Champions League y Europa League. Estás competiciones se incluyen también en el modo carrera y habrá un nuevo modo de juego llamado Champions League donde se podrá jugar la competición con los equipos de la temporada 18/19 o crear un nuevo torneo con los equipos que quieras.</li><br><br>
+                            <li>Nuevo sistema “active touch” que cambia la forma en la que el jugador llega a la pelota dotando al juego de un mayor realismo y similitud con el futbol real. Las animaciones son más naturales y tendrás que tener un mayor control sobre el jugador. ¿Querías jugar al futbol, no?</li><br><br>
+                            <li>Nuevo sistema de tácticas dinámicas que nos dota de nuevas opciones de configuración. El juego se vuelve más táctico y podrás retocar la estrategia de tu equipo dependiendo de si quieres tener más posesión, jugar al contra ataque, abierto a las bandas, con defensa adelantada o… ¡cómo tú quieras!</li><br><br>
+                            <li>Las batallas 50/50 es otra de las novedades del juego ya que mejora los encontronazos entre jugadores dotando de mayor realismo al juego. Las disputas entre jugadores serán más reales en este FIFA.</li><br><br>
+                            <li>La mecánica del tiro se mejora con “timed finished” ya que podrás mejorar el tiro pulsando otra vez el botón de tirar.</li><br><br>
+                            <li>Las novedades llegan también a FIFA Ultimate Team con la nueva "division rivals" donde podrás jugar contra jugadores de todo el mundo con un nivel parecido y ganar puntos, ya no solo por el resultado, sino por la forma de ganar. También habrá 10 nuevos iconos como Gerrard, Raúl o Rivaldo entre otros.</li><br><br>
+                        </ul> 
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+      <footer-vue></footer-vue>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="header-footer.js"></script>
+  </body>
+
+</html>

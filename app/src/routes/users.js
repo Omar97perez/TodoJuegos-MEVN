@@ -10,3 +10,9 @@ api.get('/private', auth, (req, res) => {
 })
 
 module.exports = api
+
+api.get('/', function(req,res, next){
+  res.render('public/pagina/index')
+});
+
+module.exports = api;

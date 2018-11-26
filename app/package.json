@@ -2,6 +2,7 @@
   "name": "todojuegos",
   "version": "1.0.0",
   "description": "Tienda virtual de Videojuegos",
+  "main": "index.js",
   "author": "Grupo04",
   "private": true,
   "scripts": {
@@ -17,9 +18,12 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "crypto": "^1.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "jwt-simple": "^0.5.5",
     "moment": "^2.22.2",
-    "mongoose": "^5.3.11",
+    "mongoose": "^5.3.13",
+    "morgan": "^1.9.1",
     "superagent": "^4.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"

@@ -1,6 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import index from '@/components/index'
+import registro from '@/components/registro'
+import login from '@/components/login'
+import carrito from '@/components/carrito'
+import insertarProducto from '@/components/insertarProducto'
+import Pc from '@/components/Pc'
+import Ps4 from '@/components/Ps4'
+import XboxOne from '@/components/XboxOne'
 
 Vue.use(Router)
 
@@ -9,7 +16,7 @@ export default new Router({
     {
       path: '/',
       name: 'index',
-      component: HelloWorld
+      component: index
     },
     {
       path: '/registro',
@@ -27,9 +34,9 @@ export default new Router({
       component: carrito
     },
     {
-      path: '/insertar_producto',
-      name: 'insertar_producto',
-      component: insertar_producto
+      path: '/insertarProducto',
+      name: 'insertarProducto',
+      component: insertarProducto
     },
     {
       path: '/Pc',
@@ -42,9 +49,9 @@ export default new Router({
       component: Ps4
     },
     {
-      path: '/Xbox_one',
-      name: 'Xbox_one',
-      component: Xbox_one
+      path: '/XboxOne',
+      name: 'XboxOne',
+      component: XboxOne
     }
   ]
 })

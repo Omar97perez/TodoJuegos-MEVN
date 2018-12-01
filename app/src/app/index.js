@@ -16,7 +16,7 @@ import Pc from './components/Pc.vue';
 import Ps4 from './components/Ps4.vue';
 import Registro from './components/Registro.vue';
 import XboxOne from './components/XboxOne.vue';
-import Bucador from './components/Buscador.vue';
+import Buscador from './components/Buscador.vue';
 import ModUsuario from './components/ModUsuario.vue';
 
 
@@ -62,13 +62,13 @@ const routes = [
     component: XboxOne
   },
   {
-    name: 'Bucador',
-    path: '/Productos/Bucador',
-    component: Bucador
+    name: 'Buscador',
+    path: '/Productos/Buscador',
+    component: Buscador
   },
   {
     name: 'ModUsuario',
-    path: '/Productos/ModUsuario',
+    path: '/Usuario/ModUsuario',
     component: ModUsuario
   }
 ];

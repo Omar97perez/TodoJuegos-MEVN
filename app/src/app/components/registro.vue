@@ -23,18 +23,31 @@
         <input type="email" class="form-control" id="email" placeholder="Email">
       </div>
       <div class="form-group">
-        <label for="genero">
-          Género
-        </label>
-        <select class="form-control" name="sexos" id="sexo">
-          <option value="masculino">Masculino</option>
-          <option value="femenino">Femenino</option>
-          <option value="otros">Otros</option>
-        </select>
-      </div>
-      <div class="form-group">
         <label for="password">Contraseña</label>
         <input type="password" class="form-control" id="password" placeholder="Contraseña">
+      </div>
+      <div class="form-group">
+        <label class="col-form-label col-sm-2">Género</label>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="generos" id="genero" value="masculino">
+            <label class="form-check-label" for="masculino">
+              Masculino
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="generos" id="genero" value="femenino">
+            <label class="form-check-label" for="femenino">
+              Femenino
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="generos" id="genero" value="otro">
+            <label class="form-check-label" for="otro">
+              Otro
+            </label>
+          </div>
+        </div>
       </div>
       <button type="submit" value="registrarse" class="btn btn-outline-success">Registrarse</button>
     </form>

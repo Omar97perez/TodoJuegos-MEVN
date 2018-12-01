@@ -1,10 +1,9 @@
 <template>
-  <div class="container-fluid">
-    <!-- Nuevo carousel -->
+  <div>
     <div class="container-center">
       <div class="row">
         <div class="col-12">
-          <h2>Las mejores ofertas <b>Xbox One</b></h2>
+          <h2>Las mejores ofertas <b>XBOX ONE</b></h2>
           <div id="carouselps4" class="carousel slide" data-ride="carousel" data-interval="0">
           <!-- Indicador del carousel -->
           <ol class="carousel-indicators">

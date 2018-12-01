@@ -1,5 +1,5 @@
 <template>
-<div class="container fondo-juegos">
+<div>
       <div class="row">
         <div class="col-md-12">
           <h2>Más vendidos <b>Ps4</b></h2>

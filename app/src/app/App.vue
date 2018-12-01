@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div style="background-color: #fb6207;">
       <header>
           <div class="container" >
                       <div class="row">
@@ -14,8 +14,8 @@
                                   <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                                 </form>
                                 <i>
-                                  <a><router-link :to="{ name: 'Login' }" class="nav-link"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link></a>
-                                  <a><router-link :to="{ name: 'Carrito' }" class="nav-link"><i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i></router-link></a>
+                                  <router-link :to="{ name: 'Login' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
+                                  <router-link :to="{ name: 'Carrito' }"><i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i></router-link>
                                 </i>
                           </nav>
 
@@ -74,15 +74,13 @@
                       </div>
           </div>
       </header>
-      <!-- CONTENT -->
-    <div class="container">
-      <div>
-        <transition name="fade">
-          <router-view></router-view>
-        </transition>
-      </div>
+    <!-- CONTENT -->
+    <div class="container pb-5 fondo-juegos">
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
     </div>
-
+    <!-- END CONTENT -->
     <footer>
       <div class="container text-center text-md-left page-footer font-small pt-4" style="margin-top:-15px">
 

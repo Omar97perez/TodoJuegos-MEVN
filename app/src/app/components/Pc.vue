@@ -1,5 +1,5 @@
-"/img/fifa19.jpg"<template>
-  <div class="container">
+<template>
+  <div>
     <div class="container-center">
       <div class="row">
         <div class="col-12">

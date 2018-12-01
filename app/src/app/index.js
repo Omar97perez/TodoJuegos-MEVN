@@ -7,6 +7,7 @@ import axios from 'axios';
 Vue.use(VueAxios, axios);
 
 import App from './App.vue';
+import store from './components/store';
 import Productos from './components/Administrador_Productos.vue';
 import Carrito from './components/Carrito.vue';
 import Inicio from './components/Inicio.vue';
@@ -73,4 +74,4 @@ const routes = [
 ];
 
 const router = new VueRouter({ routes,mode: 'history'});
-new Vue(Vue.util.extend({ router }, App)).$mount('#app');
+new Vue(Vue.util.extend({ router, store }, App)).$mount('#app');

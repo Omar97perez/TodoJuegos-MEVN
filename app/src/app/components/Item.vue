@@ -1,13 +1,22 @@
 <template>
-  <div class="col-md-3">
-    <div class="card">
-      <img :src="image" :alt="name" class="card-img-top">
-      <div class="card-body">
-        <h4 class="card-title">{{ name }}</h4>
-        <div class="card-text">{{ price | dollars }}</div>
-        <div class="row justify-content-end">
-          <button class="btn btn-primary" @click="addToCart(invId)">Add to cart</button>
+  <div class="col-sm-3">
+    <div class="thumb-wrapper">
+      <div class="img-box">
+        <img :src="image" :alt="name" class="img-responsive img-fluid">
+      </div>
+      <div class="thumb-content">
+        <h4>{{ name }}</h4>
+        <p class="item-price"><strike>59,99€</strike> <span>{{ price | dollars }}</span></p>
+        <div class="star-rating">
+          <ul class="list-inline">
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+          </ul>
         </div>
+        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
       </div>
     </div>
   </div>

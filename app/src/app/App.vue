@@ -11,7 +11,7 @@
                                 </a>
                                 <form class="form-inline">
                                   <input class="form-control mr-sm-2 " type="search" placeholder="Buscar" aria-label="Search">
-                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><router-link :to="{ name: 'Buscador' }">Buscar</router-link></button>
                                 </form>
                                 <i>
                                   <router-link :to="{ name: 'Login' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
@@ -65,6 +65,11 @@
                                     <li class="nav-item active">
                                       <router-link :to="{ name: 'Productos' }" class="nav-link">
                                         Administrador
+                                      </router-link>
+                                    </li>
+                                    <li class="nav-item active">
+                                      <router-link :to="{ name: 'ModUsuario' }" class="nav-link">
+                                        Modificar Usuario
                                       </router-link>
                                     </li>
                                   </ul>

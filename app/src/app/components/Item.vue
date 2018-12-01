@@ -1,12 +1,13 @@
 <template>
   <div class="col-sm-3">
     <div class="thumb-wrapper">
+
       <div class="img-box">
         <img :src="image" :alt="name" class="img-responsive img-fluid">
       </div>
       <div class="thumb-content">
         <h4>{{ name }}</h4>
-        <p class="item-price"><strike>59,99€</strike> <span>{{ price | dollars }}</span></p>
+        <p class="item-price"><strike>{{ price }}</strike> <span>{{ offer }}</span></p>
         <div class="star-rating">
           <ul class="list-inline">
             <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -27,7 +28,7 @@ import { dollars } from './filters';
 
 export default {
   name: 'item',
-  props: ['invId', 'name', 'image', 'price'],
+  props: ['invId', 'name', 'image', 'price', 'offer'],
   filters: {
     dollars,
   },

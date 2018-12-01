@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 //Esquema para Productos
 const Productos = new Schema({
+  id: Number,
   titulo: String ,
   foto: String ,
   descripcion: String,
@@ -11,7 +12,7 @@ const Productos = new Schema({
   plataforma: String ,
   categoria: String ,
   precio: Number  ,
-  oferta: Number 
+  oferta: Number
 });
 
 module.exports = mongoose.model('Productos', Productos);

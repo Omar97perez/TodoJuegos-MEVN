@@ -23,12 +23,13 @@
                 <div class="row">
                   <!-- Objetos del carousel-->
                   <Item
-                      v-for="item in forSale"
-                      :key="item.invId"
-                      :invId="item.invId"
-                      :name="item.name"
-                      :image="item.image"
-                      :price="item.price" />
+                    v-for="item in Productos_Ps4"
+                    :key="item.id"
+                    :invId="item.id"
+                    :name="item.titulo"
+                    :image="item.foto"
+                    :price="item.precio"
+                    :offer="item.oferta"/>
                 </div>
               </div>
             </div>
@@ -54,12 +55,13 @@
               <div class="item carousel-item active">
                 <div class="row">
                  <Item
-                      v-for="item in forSale"
-                      :key="item.invId"
-                      :invId="item.invId"
-                      :name="item.name"
-                      :image="item.image"
-                      :price="item.price" />
+                      v-for="item in Productos_Pc"
+                      :key="item.id"
+                      :invId="item.id"
+                      :name="item.titulo"
+                      :image="item.foto"
+                      :price="item.precio"
+                      :offer="item.oferta"/>
                 </div>
               </div>
             </div>
@@ -85,12 +87,13 @@
               <div class="item carousel-item active">
                 <div class="row">
                   <Item
-                      v-for="item in forSale"
-                      :key="item.invId"
-                      :invId="item.invId"
-                      :name="item.name"
-                      :image="item.image"
-                      :price="item.price" />
+                  v-for="item in Productos_XBoxOne"
+                  :key="item.id"
+                  :invId="item.id"
+                  :name="item.titulo"
+                  :image="item.foto"
+                  :price="item.precio"
+                  :offer="item.oferta"/>
                 </div>
               </div>
             </div>
@@ -116,6 +119,19 @@
   import Item from './Item.vue';
   import ShoppingCart from './ShoppingCart.vue';
 
+  class Producto {
+    constructor(titulo = '', foto = '',  descripcion = '', tipo = '', plataforma = '',categoria = '', precio = '', oferta = '',) {
+      this.titulo = titulo;
+      this.foto = foto;
+      this.descripcion = descripcion;
+      this.tipo = tipo;
+      this.plataforma = plataforma;
+      this.categoria = categoria;
+      this.precio = precio;
+      this.oferta = oferta;
+    }
+  }
+
   export default {
     name: 'app',
     computed: {
@@ -127,5 +143,43 @@
       Item,
       ShoppingCart,
     },
+    data() {
+      return {
+        Producto: new Producto(),
+        Productos_Ps4: [],
+        Productos_XBoxOne: [],
+        Productos_Pc: [],
+        edit: false,
+        ProductoToEdit: ''
+      }
+    },
+    created() {
+      this.getProductos_Ps4();
+      this.getProductos_XBoxOne();
+      this.getProductos_Pc();
+    },
+    methods: {
+      getProductos_Ps4() {
+        fetch('/api/TodoJuegos/Producto/')
+          .then(res => res.json())
+          .then(data => {
+            this.Productos_Ps4 = data.filter(data => data.plataforma == 'Ps4');
+          });
+      },
+      getProductos_XBoxOne() {
+        fetch('/api/TodoJuegos/Producto/')
+          .then(res => res.json())
+          .then(data => {
+            this.Productos_XBoxOne = data.filter(data => data.plataforma == 'XBoxOne');
+          });
+      },
+      getProductos_Pc() {
+        fetch('/api/TodoJuegos/Producto/')
+          .then(res => res.json())
+          .then(data => {
+            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc');
+          });
+      },
+    }
   };
 </script>

@@ -6,6 +6,9 @@
         <div class="col-md-12">
               <form @submit.prevent="sendProducto">
                 <div class="form-group ">
+                  <input type="text" v-model="Producto.id" class="form-control"  placeholder="Inserta el id">
+                </div>
+                <div class="form-group ">
                   <input type="text" v-model="Producto.titulo" class="form-control"  placeholder="Inserta el nombre">
                 </div>
                 <div class="form-group">
@@ -43,6 +46,7 @@
           <table class="table table-striped">
             <thead style="background-color:#434343;color:#fb6207">
               <tr>
+                <th >ID</th>
                 <th >Nombre</th>
                 <th>Foto</th>
                 <th>Decripcion</th>
@@ -56,6 +60,7 @@
             </thead>
             <tbody >
               <tr v-for="Producto of Productos">
+                <td>{{Producto.id}}</td>
                 <td>{{Producto.titulo}}</td>
                 <td>
                   <div class="img-box">

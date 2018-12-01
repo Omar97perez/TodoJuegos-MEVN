@@ -1,9 +1,7 @@
 
 <template>
-  <div class="fondo">
-
-    <div class="container fondo-juegos">
-     <h1 class="text-center"> Modificar Página</h1>
+    <div class="container-fluid">
+     <h1 class="text-center"> Modificar Página </h1>
       <div class="row pt-5">
         <div class="col-md-12">
               <form @submit.prevent="sendProducto">
@@ -80,8 +78,6 @@
         </div>
       </div>
     </div>
-
-  </div>
 
 </template>
 

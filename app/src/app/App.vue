@@ -1,6 +1,6 @@
 <template>
 
-    <div>
+    <div style="background-color: #fb6207;">
       <header>
           <div class="container" >
                       <div class="row">
@@ -11,11 +11,11 @@
                                 </a>
                                 <form class="form-inline">
                                   <input class="form-control mr-sm-2 " type="search" placeholder="Buscar" aria-label="Search">
-                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><router-link :to="{ name: 'Buscador' }">Buscar</router-link></button>
                                 </form>
                                 <i>
-                                  <a><router-link :to="{ name: 'Login' }" class="nav-link"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link></a>
-                                  <a><router-link :to="{ name: 'Carrito' }" class="nav-link"><i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i></router-link></a>
+                                  <router-link :to="{ name: 'Login' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
+                                  <router-link :to="{ name: 'Carrito' }"><i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i></router-link>
                                 </i>
                           </nav>
 
@@ -33,17 +33,17 @@
                                     <li class="nav-item dropdown">
                                       <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesorios</a>
                                       <div class="dropdown-menu" aria-labelledby>
-                                        <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
-                                        <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
-                                        <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Pc' }" class="nav-link">Pc</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Ps4' }" class="nav-link">Ps4</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'XboxOne' }" class="nav-link">XboxOne</router-link></a>
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">
                                       <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seminuevos</a>
                                       <div class="dropdown-menu" aria-labelledby>
-                                        <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
-                                        <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
-                                        <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Pc' }" class="nav-link">Pc</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Ps4' }" class="nav-link">Ps4</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'XboxOne' }" class="nav-link">XboxOne</router-link></a>
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -67,6 +67,11 @@
                                         Administrador
                                       </router-link>
                                     </li>
+                                    <li class="nav-item active">
+                                      <router-link :to="{ name: 'ModUsuario' }" class="nav-link">
+                                        Modificar Usuario
+                                      </router-link>
+                                    </li>
                                   </ul>
                                 </div>
                           </nav>
@@ -74,15 +79,13 @@
                       </div>
           </div>
       </header>
-      <!-- CONTENT -->
-    <div class="container">
-      <div>
-        <transition name="fade">
-          <router-view></router-view>
-        </transition>
-      </div>
+    <!-- CONTENT -->
+    <div class="container pb-5 fondo-juegos">
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
     </div>
-
+    <!-- END CONTENT -->
     <footer>
       <div class="container text-center text-md-left page-footer font-small pt-4" style="margin-top:-15px">
 

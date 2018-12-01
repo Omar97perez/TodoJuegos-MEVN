@@ -1,6 +1,5 @@
 <template>
-  <div class="container-fluid">
-    <!-- Nuevo carousel -->
+  <div>
     <div class="container-center">
       <div class="row">
         <div class="col-12">

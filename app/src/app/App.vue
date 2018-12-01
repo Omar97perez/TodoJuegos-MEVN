@@ -33,17 +33,17 @@
                                     <li class="nav-item dropdown">
                                       <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesorios</a>
                                       <div class="dropdown-menu" aria-labelledby>
-                                        <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
-                                        <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
-                                        <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Pc' }" class="nav-link">Pc</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Ps4' }" class="nav-link">Ps4</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'XboxOne' }" class="nav-link">XboxOne</router-link></a>
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">
                                       <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Seminuevos</a>
                                       <div class="dropdown-menu" aria-labelledby>
-                                        <a class="dropdown-item" href="../pagina/Pc.html">PC</a>
-                                        <a class="dropdown-item" href="../pagina/Ps4.html">PS4</a>
-                                        <a class="dropdown-item" href="../pagina/Xbox_one.html">X-Box One</a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Pc' }" class="nav-link">Pc</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Ps4' }" class="nav-link">Ps4</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'XboxOne' }" class="nav-link">XboxOne</router-link></a>
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">

@@ -8817,7 +8817,8 @@ h2::after {
 }
 
 .product-img{
-  height: 100;
+  max-width: 100px;
+  height: auto;
 }
 
 .item {

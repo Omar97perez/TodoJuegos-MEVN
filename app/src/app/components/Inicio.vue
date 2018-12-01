@@ -32,7 +32,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -56,7 +56,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -80,7 +80,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -104,7 +104,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -150,7 +150,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -174,7 +174,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -198,7 +198,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -222,7 +222,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -268,7 +268,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -292,7 +292,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -316,7 +316,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -340,7 +340,7 @@
                             <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                           </ul>
                         </div>
-                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
                       </div>
                     </div>
                   </div>
@@ -360,3 +360,13 @@
       </div>
     </div>
 </template>
+
+<script>
+  export default {
+    name: 'item',
+    props: ['invId', 'name', 'image', 'price'],
+    filters: {
+      dollars: num => `$${num / 100}`,
+    },
+  };
+</script>

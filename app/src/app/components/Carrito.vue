@@ -20,11 +20,11 @@
 
                 <div class="quantity">
                     <button class="plus-btn" type="button" name="button">
-                      <img src="img/plus.svg" alt="" />
+                      +
                     </button>
                     <input type="text" name="name" value="1">
                     <button class="minus-btn" type="button" name="button">
-                        <img src="img/minus.svg" alt="" />
+                        -
                     </button>
                 </div>
 

@@ -15,7 +15,7 @@
                                 </form>
                                 <i>
                                   <router-link :to="{ name: 'Login' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
-                                  <router-link :to="{ name: 'Carrito' }"><i class="fa fa-shopping-cart col-md-5" style="font-size:24px"></i></router-link>
+                                  <i class="fa fa-shopping-cart col-md-5" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
                                 </i>
                           </nav>
 
@@ -198,3 +198,31 @@
 
 
 </template>
+
+<script>
+import { dollars } from './components/filters';
+
+export default {
+  name: 'shoppingCart',
+  computed: {
+    inCart() { return this.$store.getters.inCart; },
+    numInCart() { return this.inCart.length; },
+    cart() {
+      return this.$store.getters.inCart.map((cartItem) => {
+        return this.$store.getters.forSale.find((forSaleItem) => {
+          return cartItem === forSaleItem.invId;
+        });
+      });
+    },
+    total() {
+      return this.cart.reduce((acc, cur) => acc + cur.price, 0);
+    },
+  },
+  filters: {
+    dollars,
+  },
+  methods: {
+    removeFromCart(index) { this.$store.dispatch('removeFromCart', index); },
+  },
+};
+</script>

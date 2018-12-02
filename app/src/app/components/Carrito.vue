@@ -28,7 +28,7 @@
                     </button>
                 </div>
 
-                <div class="total-price">39,99€</div>
+                <div class="total-price"></div>
                 <div class="delete-btn">
                     <img src="img/delete-icn.svg" alt="">
                 </div>

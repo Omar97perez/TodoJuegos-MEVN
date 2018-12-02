@@ -1,7 +1,5 @@
 <template>
   <div>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#shoppingCart">Cart ({{ numInCart }})</button>
-
     <div id="shoppingCart" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -30,8 +28,8 @@
             </table>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-secondary" data-dismiss="modal">Keep shopping</button>
-            <button class="btn btn-primary">Check out</button>
+            <button class="btn btn-secondary" data-dismiss="modal">Seguir comprando</button>
+            <router-link :to="{ name: 'Carrito' }"><button class="btn btn-primary" data-dismiss="modal">Pagar</button></router-link>
           </div>
         </div>
       </div>

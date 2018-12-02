@@ -1,95 +1,89 @@
+
 <template>
-<div id="app" class="container-fluid">
-  <div class="row">
-  <div class="col-2"></div>
-  <div class="col-8 fondo-juegos">
-      <div class="container-center">
-          <form class="form-center" @submit.prevent="sendProducto">
-              <div class="form-group row">
-                  <div class="col">
-                      <label for="tittle">Titulo del producto</label>
-                      <input v-model="Producto.titulo" type="text" class="form-control">
-                  </div>
-
-                  <div class="col">
-                      <label for="price">Precio</label>
-                      <input type="text" class="form-control">
-                  </div>
-              </div>
-
-              <div class="form-group">
-                  <label for="desc">Descripción del articulo</label>
-                  <textarea name="desc" id="desc" cols="30" rows="5" class="form-control"></textarea>
-              </div>
-
-              <div class="form-group">
-                  <label for="sel1">Tipo de producto:</label>
-                  <select class="form-control" id="product" name="product" v-model="selected" style="height: 40px;">
-                      <option value="0"></option>
-                      <option value="1">Juego</option>
-                      <option value="2">Consola</option>
-                      <option value="3">Accesorio</option>
-                      <option value="4">Mercha</option>
-                  </select>
-              </div>
-
-              <div v-if="selected === '1'" class="form-group" id="game">
-                  <label for="">Categoria</label>
-                  <select class="form-control" name="" id="" style="height: 40px;">
-                      <option value=""></option>
-                      <option value="">Aventura</option>
-                      <option value="">Deportes</option>
-                      <option value="">Acción</option>
-                      <option value="">Conducción</option>
-                      <option value="">Estrategia</option>
-                      <option value="">RPG</option>
-                  </select>
-
-                  <label for="">Plataforma</label>
-                  <select class="form-control" name="" id="" style="height: 40px;">
-                      <option value=""></option>
-                      <option value="">PS4</option>
-                      <option value="">PC</option>
-                      <option value="">XBOX ONE</option>
-                      <option value="">SWITCH</option>
-                      <option value="">Multiplataforma</option>
-                  </select>
-              </div>
-
-              <div v-if="selected === '3'" class="form-group" id="acc">
-                  <label for="">Tipo de accesorio</label>
-                  <select class="form-control" name="" id="" style="height: 40px;">
-                      <option value=""></option>
-                      <option value="">Mandos</option>
-                      <option value="">Sillas</option>
-                      <option value="">Teclados</option>
-                      <option value="">Ratones</option>
-                      <option value="">Cargadores</option>
-                  </select>
-              </div>
-
-              <div v-if="selected === '4'" class="form-group" id="mercha">
-                  <label for="">Tipo de mercha</label>
-                  <select class="form-control" name="" id="" style="height: 40px;">
-                      <option value=""></option>
-                      <option value="">Camiseta</option>
-                      <option value="">Sudadera</option>
-                      <option value="">Chapas</option>
-                      <option value="">Cartas</option>
-                  </select>
-              </div>
-              
-              <div class="form-group">
-                  <label for="">Imagen del producto</label>
-                  <input type="file" class="filepond" name="filepond" multiple data-max-file-size="10MB" data-max-files="3"/>
-              </div>
-
-              <button type="submit" class="btn btn-default">Publicar</button>
-          </form>
+    <div class="container-fluid">
+     <h1 class="text-center"> Modificar Página </h1>
+      <div class="row pt-5">
+        <div class="col-md-12">
+              <form @submit.prevent="sendProducto">
+                <div class="form-group ">
+                  <input type="text" v-model="Producto.id" class="form-control"  placeholder="Inserta el id">
+                </div>
+                <div class="form-group ">
+                  <input type="text" v-model="Producto.titulo" class="form-control"  placeholder="Inserta el nombre">
+                </div>
+                <div class="form-group">
+                  <input type="text" v-model="Producto.foto" class="form-control" placeholder="Inserta Url de la foto">
+                </div>
+                <div class="form-group">
+                  <textarea v-model="Producto.descripcion" cols="30" rows="5" placeholder="Inserta una descripción" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="text" v-model="Producto.tipo" class="form-control" placeholder="Inserta el tipo">
+                </div>
+                <div class="form-group">
+                  <input type="text" v-model="Producto.plataforma" class="form-control" placeholder="Inserta la plataforma">
+                </div>
+                <div class="form-group">
+                  <input type="text" v-model="Producto.categoria" class="form-control" placeholder="Inserta la categoria">
+                </div>
+                <div class="form-group">
+                  <input type="text" v-model="Producto.precio" class="form-control" placeholder="Inserta el precio">
+                </div>
+                <div class="form-group">
+                  <input type="text" v-model="Producto.oferta" class="form-control" placeholder="Inserta la oferta">
+                </div>
+                <template v-if="edit === false">
+                  <button class="btn btn-primary btn-block" style="background-color:#434343;color:#434343;color:#fb6207">Send</button>
+                </template>
+                <template v-else>
+                  <button class="btn btn-primary btn-block"style="background-color:#434343;color:#434343;color:#fb6207">Edit</button>
+                </template>
+              </form>
+        </div>
       </div>
-  </div>
-  </div>
-</div>
+      <div class="row pt-5">
+        <div class="col-md-12">
+          <table class="table table-striped">
+            <thead style="background-color:#434343;color:#fb6207">
+              <tr>
+                <th >ID</th>
+                <th >Nombre</th>
+                <th>Foto</th>
+                <th>Decripcion</th>
+                <th>Tipo</th>
+                <th>Plaforma</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Oferta</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr v-for="Producto of Productos">
+                <td>{{Producto.id}}</td>
+                <td>{{Producto.titulo}}</td>
+                <td>
+                  <div class="img-box">
+                    <img v-bind:src="Producto.foto"  width="150" height="150"></img>
+                  </div>
+                </td>
+                <td>{{Producto.descripcion}}</td>
+                <td>{{Producto.tipo}}</td>
+                <td>{{Producto.plataforma}}</td>
+                <td>{{Producto.categoria}}</td>
+                <td>{{Producto.precio}}</td>
+                <td>{{Producto.oferta}}</td>
+                <td>
+                  <button @click="deleteProducto(Producto._id)" class="btn btn-danger mb-4" >Delete</button>
+                  <button @click="editProducto(Producto._id)" class="btn btn-secondary" style="background-color:#434343">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
 </template>
 
 <script>
@@ -111,8 +105,7 @@ export default {
       Producto: new Producto(),
       Productos: [],
       edit: false,
-      ProductoToEdit: '',
-      selected: null,
+      ProductoToEdit: ''
     }
   },
   created() {
@@ -184,4 +177,5 @@ export default {
     }
   }
 }
+
 </script>

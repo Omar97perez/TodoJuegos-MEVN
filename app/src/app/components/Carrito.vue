@@ -6,16 +6,16 @@
         </div>
 
         <!--Producto-->
-        <ul>
+        <ul v-for="(item, index) in cart">
             <div class="item">
                 <div class="image">
                     <img class="product-img" src="/img/fifa19.jpg" alt="" />
                 </div>
 
                 <div class="description">
-                    <span>Fifa 19</span>
+                    <span>{{ item.name }}</span>
                     <span>Normal edition</span>
-                    <span>39,99€</span>
+                    <span>{{ item.price | dollars }}</span>
                 </div>
 
                 <div class="quantity">
@@ -28,7 +28,7 @@
                     </button>
                 </div>
 
-                <div class="total-price">39,99€</div>
+                <div class="total-price"></div>
                 <div class="delete-btn">
                     <img src="img/delete-icn.svg" alt="">
                 </div>
@@ -36,7 +36,7 @@
         </ul>
         <!--Fin de producto-->
         <div class="cart-tittle">
-            Precio total: 39,99€
+            Precio total: {{ total | dollars }}
             <a href="#">
                 <input type="button" value="Comprar" class="btn btn-dark btn-lg buy-btn" data-toggle="collapse" data-target="#card-pay"/>
             </a>
@@ -134,6 +134,8 @@
 </template>
 
 <script>
+import { dollars } from './filters';
+
 export default {
   name: 'HelloWorld',
   data () {
@@ -167,6 +169,26 @@ export default {
     $('.like-btn').on('click', function() {
     $(this).toggleClass('is-active')
     })
-  }
-}
+  },
+  computed: {
+    inCart() { return this.$store.getters.inCart; },
+    numInCart() { return this.inCart.length; },
+    cart() {
+      return this.$store.getters.inCart.map((cartItem) => {
+        return this.$store.getters.forSale.find((forSaleItem) => {
+          return cartItem === forSaleItem.invId;
+        });
+      });
+    },
+    total() {
+      return this.cart.reduce((acc, cur) => acc + cur.price, 0);
+    },
+  },
+  filters: {
+    dollars,
+  },
+  methods: {
+    removeFromCart(index) { this.$store.dispatch('removeFromCart', index); },
+  },
+};
 </script>

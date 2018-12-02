@@ -7,9 +7,9 @@ export default new Vuex.Store({
   state: {
     forSale: [
       { invId: 1, name: 'Fifa 19', image: '//placehold.it/200', price: 3999 },
-      { invId: 2, name: 'Fifa 18', image: '//placehold.it/200', price: 3999 },
-      { invId: 3, name: 'Fifa 17', image: '//placehold.it/200', price: 3999 },
-      { invId: 4, name: 'Fifa 16', image: '//placehold.it/200', price: 3999 },
+      { invId: 2, name: 'Fifa 18', image: '//placehold.it/200', price: 3599 },
+      { invId: 3, name: 'Fifa 17', image: '//placehold.it/200', price: 3399 },
+      { invId: 4, name: 'Fifa 16', image: '//placehold.it/200', price: 1999 },
     ],
     inCart: [],
   },

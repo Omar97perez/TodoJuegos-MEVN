@@ -1,8 +1,20 @@
-const express = require('express');
-const morgan = require('morgan');
-const mongoose = require('mongoose');
+require('rootpath')()
+const express = require('express')
+const morgan = require('morgan')
+const mongoose = require('mongoose')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+const jwt = require('./authentication/backend/_services/jwt')
+const errorHandler = require('./authentication/backend/_services/error-handler')
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(cors())
+app.use('/users', require('./authentication/backend/users/users-controller'))
+app.use(errorHandler)
+
+
 //Conexión con la base de datos, cuando se despliegue en servidor  se tendrá que cambiar la dirección
 mongoose.connect('mongodb://localhost/TodoJuegos')
   .then(db => console.log('DB conectada')) //Imprimir DB conectada en caso de que todo vaya bien

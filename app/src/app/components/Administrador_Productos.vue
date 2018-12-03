@@ -5,39 +5,103 @@
       <div class="row pt-5">
         <div class="col-md-12">
               <form @submit.prevent="sendProducto">
-                <div class="form-group ">
-                  <input type="text" v-model="Producto.id" class="form-control"  placeholder="Inserta el id">
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="tittle">Titulo del producto</label>
+                        <input v-model="Producto.titulo" type="text" class="form-control">
+                    </div>
+
+                    <div class="col">
+                        <label for="price">Precio</label>
+                        <input v-model="Producto.precio" type="text" class="form-control">
+                    </div>
+
+                    <div class="col">
+                        <label for="price">Oferta</label>
+                        <input v-model="Producto.oferta" type="text" class="form-control">
+                    </div>
                 </div>
-                <div class="form-group ">
-                  <input type="text" v-model="Producto.titulo" class="form-control"  placeholder="Inserta el nombre">
-                </div>
+
                 <div class="form-group">
-                  <input type="text" v-model="Producto.foto" class="form-control" placeholder="Inserta Url de la foto">
+                    <label for="desc">Descripción del articulo</label>
+                    <textarea v-model="Producto.descripcion" name="desc" id="desc" cols="30" rows="5" class="form-control"></textarea>
                 </div>
+
                 <div class="form-group">
-                  <textarea v-model="Producto.descripcion" cols="30" rows="5" placeholder="Inserta una descripción" class="form-control"></textarea>
+                    <label for="sel1">Tipo de producto:</label>
+                    <select class="form-control" id="product" name="product" v-model="Producto.tipo" style="height: 40px;">
+                        <option value="0"></option>
+                        <option value="videojuego">Juego</option>
+                        <option value="consola">Consola</option>
+                        <option value="accesorio">Accesorio</option>
+                        <option value="mercha">Mercha</option>
+                    </select>
                 </div>
+
+                <div v-if="Producto.tipo === 'videojuego'" class="form-group" id="game">
+                    <label for="">Categoria</label>
+                    <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
+                        <option value=""></option>
+                        <option value="aventura">Aventura</option>
+                        <option value="deportes">Deportes</option>
+                        <option value="accion">Acción</option>
+                        <option value="conduccion">Conducción</option>
+                        <option value="estrategia">Estrategia</option>
+                        <option value="rpg">RPG</option>
+                    </select>
+
+                    <label for="">Plataforma</label>
+                    <select v-model="Producto.plataforma" class="form-control" name="" id="" style="height: 40px;">
+                        <option value=""></option>
+                        <option value="Ps4">PS4</option>
+                        <option value="Pc">PC</option>
+                        <option value="XBoxOne">XBOX ONE</option>
+                        <option value="Switch">SWITCH</option>
+                        <option value="Multi">Multiplataforma</option>
+                    </select>
+                </div>
+
+                <div v-if="Producto.tipo === 'consola'" class="form-group" id="game">
+                  <label for="sel1">Tipo de consola:</label>
+                  <select v-model="Producto.plataforma" class="form-control" name="" id="" style="height: 40px;">
+                      <option value=""></option>
+                      <option value="Ps4">PS4</option>
+                      <option value="Pc">PC</option>
+                      <option value="XBoxOne">XBOX ONE</option>
+                      <option value="Switch">SWITCH</option>
+                      <option value="Multi">Multiplataforma</option>
+                  </select>
+                </div>
+
+                <div v-if="Producto.tipo === 'accesorio'" class="form-group" id="acc">
+                    <label for="">Tipo de accesorio</label>
+                    <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
+                        <option value=""></option>
+                        <option value="mando">Mandos</option>
+                        <option value="silla">Sillas</option>
+                        <option value="teclado">Teclados</option>
+                        <option value="raton">Ratones</option>
+                        <option value="cargador">Cargadores</option>
+                    </select>
+                </div>
+
+                <div v-if="Producto.tipo === 'mercha'" class="form-group" id="mercha">
+                    <label for="">Tipo de mercha</label>
+                    <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
+                        <option value=""></option>
+                        <option value="camiseta">Camiseta</option>
+                        <option value="sudadera">Sudadera</option>
+                        <option value="chapa">Chapas</option>
+                        <option value="cartas">Cartas</option>
+                    </select>
+                </div>
+
                 <div class="form-group">
-                  <input type="text" v-model="Producto.tipo" class="form-control" placeholder="Inserta el tipo">
+                  <label for="price">URL imagen</label>
+                  <input v-model="Producto.foto" type="text" class="form-control">
                 </div>
-                <div class="form-group">
-                  <input type="text" v-model="Producto.plataforma" class="form-control" placeholder="Inserta la plataforma">
-                </div>
-                <div class="form-group">
-                  <input type="text" v-model="Producto.categoria" class="form-control" placeholder="Inserta la categoria">
-                </div>
-                <div class="form-group">
-                  <input type="text" v-model="Producto.precio" class="form-control" placeholder="Inserta el precio">
-                </div>
-                <div class="form-group">
-                  <input type="text" v-model="Producto.oferta" class="form-control" placeholder="Inserta la oferta">
-                </div>
-                <template v-if="edit === false">
-                  <button class="btn btn-primary btn-block" style="background-color:#434343;color:#434343;color:#fb6207">Send</button>
-                </template>
-                <template v-else>
-                  <button class="btn btn-primary btn-block"style="background-color:#434343;color:#434343;color:#fb6207">Edit</button>
-                </template>
+
+                <button type="submit" class="btn btn-default">Publicar</button>
               </form>
         </div>
       </div>

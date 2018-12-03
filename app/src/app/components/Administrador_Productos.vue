@@ -26,7 +26,7 @@
                     <label for="desc">Descripción del articulo</label>
                     <textarea v-model="Producto.descripcion" name="desc" id="desc" cols="30" rows="5" class="form-control"></textarea>
                 </div>
-  
+
                 <div class="form-group">
                     <label for="sel1">Tipo de producto:</label>
                     <select class="form-control" id="product" name="product" v-model="Producto.tipo" style="height: 40px;">
@@ -37,7 +37,7 @@
                         <option value="mercha">Mercha</option>
                     </select>
                 </div>
-                
+
                 <div v-if="Producto.tipo === 'videojuego'" class="form-group" id="game">
                     <label for="">Categoria</label>
                     <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
@@ -95,11 +95,11 @@
                         <option value="cartas">Cartas</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="">Imagen del producto</label>
-                    <input type="file" class="filepond" name="filepond" multiple data-max-file-size="10MB" data-max-files="3"/>
-                </div>-->
+                  <label for="price">URL imagen</label>
+                  <input v-model="Producto.foto" type="text" class="form-control">
+                </div>
 
                 <button type="submit" class="btn btn-default">Publicar</button>
               </form>

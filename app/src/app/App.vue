@@ -203,14 +203,19 @@
 import { dollars } from './components/filters';
 
 export default {
-  name: 'shoppingCart',
+  name: 'App',
+  data(){
+    return{
+      Productos: [],
+    }
+  },
   computed: {
     inCart() { return this.$store.getters.inCart; },
     numInCart() { return this.inCart.length; },
     cart() {
       return this.$store.getters.inCart.map((cartItem) => {
-        return this.$store.getters.forSale.find((forSaleItem) => {
-          return cartItem === forSaleItem.invId;
+        return this.Productos.find((forSaleItem) => {
+          return cartItem === forSaleItem._id;
         });
       });
     },
@@ -221,8 +226,18 @@ export default {
   filters: {
     dollars,
   },
+  created() {
+    this.getProductos();
+  },
   methods: {
     removeFromCart(index) { this.$store.dispatch('removeFromCart', index); },
+    getProductos() {
+      fetch('/api/TodoJuegos/Producto/')
+        .then(res => res.json())
+        .then(data => {
+          this.Productos = data;
+        });
+    },
   },
 };
 </script>

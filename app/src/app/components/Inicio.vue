@@ -25,8 +25,8 @@
                 <!-- Objetos del carousel-->
                 <Item
                   v-for="item in Productos_Ps4"
-                  :key="item.id"
-                  :invId="item.id"
+                  :key="item._id"
+                  :invId="item._id"
                   :name="item.titulo"
                   :image="item.foto"
                   :price="item.precio"
@@ -57,8 +57,8 @@
             <div class="row">
              <Item
                   v-for="item in Productos_Pc"
-                  :key="item.id"
-                  :invId="item.id"
+                  :key="item._id"
+                  :invId="item._id"
                   :name="item.titulo"
                   :image="item.foto"
                   :price="item.precio"
@@ -89,8 +89,8 @@
             <div class="row">
               <Item
               v-for="item in Productos_XBoxOne"
-              :key="item.id"
-              :invId="item.id"
+              :key="item._id"
+              :invId="item._id"
               :name="item.titulo"
               :image="item.foto"
               :price="item.precio"

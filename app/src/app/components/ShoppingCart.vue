@@ -13,15 +13,15 @@
             <table class="table">
               <tbody>
                 <tr v-for="(item, index) in cart">
-                  <td>{{ item.name }}</td>
-                  <td>{{ item.price | dollars }}</td>
+                  <td>{{ item.titulo }}</td>
+                  <td>{{ item.oferta}}€</td>
                   <td>
                     <button class="btn btn-sm btn-danger" @click="removeFromCart(index)">&times;</button>
                   </td>
                 </tr>
                 <tr>
                   <th></th>
-                  <th>{{ total | dollars }}</th>
+                  <th>{{ total }}€</th>
                   <th></th>
                 </tr>
               </tbody>
@@ -37,30 +37,46 @@
   </div>
 </template>
 
+
 <script>
 import { dollars } from './filters';
 
 export default {
-  name: 'shoppingCart',
+  name: 'cart',
+  data(){
+    return{
+      Productos: [],
+    }
+  },
   computed: {
     inCart() { return this.$store.getters.inCart; },
     numInCart() { return this.inCart.length; },
     cart() {
       return this.$store.getters.inCart.map((cartItem) => {
-        return this.$store.getters.forSale.find((forSaleItem) => {
-          return cartItem === forSaleItem.invId;
+        return this.Productos.find((forSaleItem) => {
+          return cartItem === forSaleItem._id;
         });
       });
     },
     total() {
-      return this.cart.reduce((acc, cur) => acc + cur.price, 0);
+      return this.cart.reduce((acc, cur) => acc + cur.oferta, 0);
     },
   },
   filters: {
     dollars,
   },
+  created() {
+    this.getProductos();
+  },
   methods: {
     removeFromCart(index) { this.$store.dispatch('removeFromCart', index); },
+    getProductos() {
+      fetch('/api/TodoJuegos/Producto/')
+        .then(res => res.json())
+        .then(data => {
+          this.Productos = data;
+        });
+    },
   },
 };
 </script>

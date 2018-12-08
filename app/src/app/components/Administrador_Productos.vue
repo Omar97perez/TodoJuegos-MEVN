@@ -124,7 +124,7 @@
             </thead>
             <tbody >
               <tr v-for="Producto of Productos">
-                <td>{{Producto.id}}</td>
+                <td>{{Producto._id}}</td>
                 <td>{{Producto.titulo}}</td>
                 <td>
                   <div class="img-box">

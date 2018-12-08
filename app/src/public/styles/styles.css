@@ -532,11 +532,10 @@ h2::after {
   padding-top: 27px;
   text-align: center;
   font-size: 16px;
-  /*background: rgb(255, 0, 0);*/
+  color: white;
+  background: rgb(255, 0, 0);
   font-weight: 300;
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5);
+  border-radius: 5px;
 }
 
 .like-btn {

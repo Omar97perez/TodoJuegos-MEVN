@@ -9,13 +9,13 @@
         <ul v-for="(item, index) in cart">
             <div class="item">
                 <div class="image">
-                    <img class="product-img" src="/img/fifa19.jpg" alt="" />
+                    <img class="product-img" :src="item.foto" alt="" />
                 </div>
 
                 <div class="description">
-                    <span>{{ item.name }}</span>
+                    <span>{{ item.titulo }}</span>
                     <span>Normal edition</span>
-                    <span>{{ item.price | dollars }}</span>
+                    <span>{{ item.oferta}}€</span>
                 </div>
 
                 <div class="quantity">
@@ -29,14 +29,15 @@
                 </div>
 
                 <div class="total-price"></div>
-                <div class="delete-btn">
-                    <img src="img/delete-icn.svg" alt="">
+                <div class="delete-btn" @click="removeFromCart(index)">
+                    X
                 </div>
             </div>
         </ul>
         <!--Fin de producto-->
         <div class="cart-tittle">
-            Precio total: {{ total | dollars }}
+            
+            Precio total: {{ total }}€
             <a href="#">
                 <input type="button" value="Comprar" class="btn btn-dark btn-lg buy-btn" data-toggle="collapse" data-target="#card-pay"/>
             </a>
@@ -140,7 +141,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      Productos: [],
     }
     $('.minus-btn').on('click', function(e) {
     e.preventDefault()
@@ -170,18 +172,21 @@ export default {
     $(this).toggleClass('is-active')
     })
   },
+  created() {
+    this.getProductos();
+  },
   computed: {
     inCart() { return this.$store.getters.inCart; },
     numInCart() { return this.inCart.length; },
     cart() {
       return this.$store.getters.inCart.map((cartItem) => {
-        return this.$store.getters.forSale.find((forSaleItem) => {
-          return cartItem === forSaleItem.invId;
+        return this.Productos.find((forSaleItem) => {
+          return cartItem === forSaleItem._id;
         });
       });
     },
     total() {
-      return this.cart.reduce((acc, cur) => acc + cur.price, 0);
+      return this.cart.reduce((acc, cur) => acc + cur.oferta, 0);
     },
   },
   filters: {
@@ -189,6 +194,13 @@ export default {
   },
   methods: {
     removeFromCart(index) { this.$store.dispatch('removeFromCart', index); },
+    getProductos() {
+      fetch('/api/TodoJuegos/Producto/')
+        .then(res => res.json())
+        .then(data => {
+          this.Productos = data;
+        });
+    },
   },
 };
 </script>

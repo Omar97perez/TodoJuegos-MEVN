@@ -72,6 +72,11 @@
                                         Modificar Usuario
                                       </router-link>
                                     </li>
+                                    <li class="nav-item active">
+                                      <router-link :to="{ name: 'Filtro' }" class="nav-link">
+                                        Filtro
+                                      </router-link>
+                                    </li>
                                   </ul>
                                 </div>
                           </nav>

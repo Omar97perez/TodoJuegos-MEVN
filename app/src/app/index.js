@@ -18,6 +18,7 @@ import Registro from './components/Registro.vue';
 import XboxOne from './components/XboxOne.vue';
 import Buscador from './components/Buscador.vue';
 import ModUsuario from './components/ModUsuario.vue';
+import Filtro from './components/Filtro.vue';
 
 
 const routes = [
@@ -70,6 +71,11 @@ const routes = [
     name: 'ModUsuario',
     path: '/Usuario/ModUsuario',
     component: ModUsuario
+  },
+  {
+    name: 'Filtro',
+    path: '/Productos/Filtro',
+    component: Filtro
   }
 ];
 

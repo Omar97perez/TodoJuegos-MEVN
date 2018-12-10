@@ -1,5 +1,6 @@
 const config = require('../config.json')
-const jwt = require('jsonwebtoken')
+// const jwt = require('jsonwebtoken')
+const jwt = require('../_services/jwt')
 const bcrypt = require('bcryptjs')
 const db = require('../_services/database')
 const User = db.User;
@@ -15,39 +16,48 @@ module.exports = {
 
 async function authenticate({ email, password }) {
     const user = await User.findOne({ email })
-    if (user && bcrypt.compareSync(password, user.hash)) {
-        const { hash, ...userWithoutHash } = user.toObject()
+    
+    if (user && bcrypt.compareSync(password, user.password)) {
+        console.log(user)
+        // const { password, ...userWithoutHash } = user.toObject()
+        // console.log(...userWithoutHash)
         const token = jwt.createToken(user)
+        console.log(token)
         return {
-            ...userWithoutHash,
+            // ...userWithoutHash,
             token
         };
     }
+
 }
 
 async function getAll() {
-    return await User.find().select('-hash')
+    return await User.find().select('-password')
 }
 
 async function getById(id) {
-    return await User.findById(id).select('-hash')
+    return await User.findById(id).select('-password')
 }
 
-async function create(userParam) {
+async function create(userParam, res) {
+    
     // validate
     if (await User.findOne({ email: userParam.email })) {
-        // throw 'email "' + userParam.email + '" is already taken'
-        throw Error(`Email ${userParam.email} is already taken`)
+        throw 'email "' + userParam.email + '" is already taken'
+        // throw Error(`Email ${userParam.email} is already taken`)
     }
-
+    // console.log("1234")
     const user = new User(userParam)
+    // console.log(userParam)
 
     // hash password
     if (userParam.password) {
-        user.hash = bcrypt.hashSync(userParam.password, 10)
+        user.password = bcrypt.hashSync(userParam.password)
     }
+    // console.log(user)
     // save user
     await user.save()
+    // user.save()
 }
 
 async function update(id, userParam) {
@@ -62,7 +72,7 @@ async function update(id, userParam) {
 
     // hash password if it was entered
     if (userParam.password) {
-        userParam.hash = bcrypt.hashSync(userParam.password, 10)
+        userParam.password = bcrypt.hashSync(userParam.password, 10)
     }
 
     // copy userParam properties to user

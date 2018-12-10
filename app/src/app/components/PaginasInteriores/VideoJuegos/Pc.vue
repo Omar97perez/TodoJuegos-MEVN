@@ -281,13 +281,13 @@
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc');
-            this.Productos_Pc_accion = data.filter(data => data.plataforma == 'Pc' && data.categoria == 'Acción');
-            this.Productos_Pc_aventura = data.filter(data => data.plataforma == 'Pc' && data.categoria == 'Aventura');
-            this.Productos_Pc_deporte = data.filter(data => data.plataforma == 'Pc' && data.categoria == 'Deportes');
-            this.Productos_Pc_conduccion = data.filter(data => data.plataforma == 'Pc' && data.categoria == 'Conducción');
-            this.Productos_Pc_estrategia = data.filter(data => data.plataforma == 'Pc' && data.categoria == 'Estrategia');
-            this.Productos_Pc_rpg = data.filter(data => data.plataforma == 'Pc' && data.categoria == 'RPG');
+            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego');
+            this.Productos_Pc_accion = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Acción');
+            this.Productos_Pc_aventura = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Aventura');
+            this.Productos_Pc_deporte = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Deportes');
+            this.Productos_Pc_conduccion = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Conducción');
+            this.Productos_Pc_estrategia = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Estrategia');
+            this.Productos_Pc_rpg = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'RPG');
           });
       },
     }

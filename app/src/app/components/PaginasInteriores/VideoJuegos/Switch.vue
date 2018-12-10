@@ -281,13 +281,13 @@
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Switch = data.filter(data => data.plataforma == 'Switch');
-            this.Productos_Switch_accion = data.filter(data => data.plataforma == 'Switch' && data.categoria == 'Acción');
-            this.Productos_Switch_aventura = data.filter(data => data.plataforma == 'Switch' && data.categoria == 'Aventura');
-            this.Productos_Switch_deporte = data.filter(data => data.plataforma == 'Switch' && data.categoria == 'Deportes');
-            this.Productos_Switch_conduccion = data.filter(data => data.plataforma == 'Switch' && data.categoria == 'Conducción');
-            this.Productos_Switch_estrategia = data.filter(data => data.plataforma == 'Switch' && data.categoria == 'Estrategia');
-            this.Productos_Switch_rpg = data.filter(data => data.plataforma == 'Switch' && data.categoria == 'RPG');
+            this.Productos_Switch = data.filter(data => data.plataforma == 'Switch' && data.tipo == 'Videojuego');
+            this.Productos_Switch_accion = data.filter(data => data.plataforma == 'Switch' && data.tipo == 'Videojuego' && data.categoria == 'Acción');
+            this.Productos_Switch_aventura = data.filter(data => data.plataforma == 'Switch' && data.tipo == 'Videojuego' && data.categoria == 'Aventura');
+            this.Productos_Switch_deporte = data.filter(data => data.plataforma == 'Switch' && data.tipo == 'Videojuego' && data.categoria == 'Deportes');
+            this.Productos_Switch_conduccion = data.filter(data => data.plataforma == 'Switch' && data.tipo == 'Videojuego' && data.categoria == 'Conducción');
+            this.Productos_Switch_estrategia = data.filter(data => data.plataforma == 'Switch' && data.tipo == 'Videojuego' && data.categoria == 'Estrategia');
+            this.Productos_Switch_rpg = data.filter(data => data.plataforma == 'Switch' && data.tipo == 'Videojuego' && data.categoria == 'RPG');
           });
       },
     }

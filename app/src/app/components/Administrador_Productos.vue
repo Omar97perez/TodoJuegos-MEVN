@@ -35,6 +35,7 @@
                         <option value="consola">Consola</option>
                         <option value="accesorio">Accesorios</option>
                         <option value="mercha">Merchadising</option>
+                        <option value="electronica">Electronica</option>
                     </select>
                 </div>
 
@@ -104,6 +105,17 @@
                         <option value="figuraspop">Figuras Pop</option>
                         <option value="ropa">Ropa</option>
                         <option value="peluches">Peluches</option>
+                    </select>
+                </div>
+
+                <div v-if="Producto.tipo === 'electronica'" class="form-group" id="game">
+                    <label for="">Categoria</label>
+                    <select v-model="Producto.plataforma" class="form-control" name="" id="" style="height: 40px;">
+                        <option value=""></option>
+                        <option value="smartphone">Smartphone</option>
+                        <option value="accsmartphone">Accesorio Smartphone</option>
+                        <option value="tablets">Tablets</option>
+                        <option value="acctablets">Accesorio Tablets</option>
                     </select>
                 </div>
 

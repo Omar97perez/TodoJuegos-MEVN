@@ -50,12 +50,10 @@
                                         Merchandising
                                       </router-link>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electronica</a>
-                                      <div class="dropdown-menu" aria-labelledby>
-                                        <a class="dropdown-item" href="#">Smartphones</a>
-                                        <a class="dropdown-item" href="#">Tablets</a>
-                                      </div>
+                                    <li class="nav-item active">
+                                      <router-link :to="{ name: 'Electronica' }" class="nav-link">
+                                        Electronica
+                                      </router-link>
                                     </li>
                                     <li class="nav-item active">
                                       <router-link :to="{ name: 'Productos' }" class="nav-link">

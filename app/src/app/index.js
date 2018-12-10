@@ -24,6 +24,7 @@ import Accesorios_Pc from './components/PaginasInteriores/Accesorios/Pc.vue';
 import Accesorios_Ps4 from './components/PaginasInteriores/Accesorios/Ps4.vue';
 import Accesorios_XboxOne from './components/PaginasInteriores/Accesorios/XboxOne.vue';
 import Accesorios_Switch from './components/PaginasInteriores/Accesorios/Switch.vue';
+import Consolas from './components/PaginasInteriores/Consola/Consolas.vue';
 
 
 const routes = [
@@ -106,6 +107,11 @@ const routes = [
     name: 'Accesorios_Switch',
     path: '/Accesorios/Switch',
     component: Accesorios_Switch
+  },
+  {
+    name: 'Consolas',
+    path: '/Consolas',
+    component: Consolas
   },
 ];
 

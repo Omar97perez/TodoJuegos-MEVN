@@ -33,8 +33,8 @@
                         <option value="0"></option>
                         <option value="videojuego">Juego</option>
                         <option value="consola">Consola</option>
-                        <option value="accesorio">Accesorio</option>
-                        <option value="mercha">Mercha</option>
+                        <option value="accesorio">Accesorios</option>
+                        <option value="mercha">Merchadising</option>
                     </select>
                 </div>
 
@@ -78,10 +78,11 @@
                     <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
                         <option value=""></option>
                         <option value="mando">Mandos</option>
-                        <option value="silla">Sillas</option>
-                        <option value="teclado">Teclados</option>
-                        <option value="raton">Ratones</option>
+                        <option value="cascos">Cascos</option>
+                        <option value="grips">Grips</option>
                         <option value="cargador">Cargadores</option>
+                        <option value="volantes">volantes</option>
+                        <option value="cover">cover</option>
                     </select>
 
                     <label for="">Plataforma</label>

@@ -19,6 +19,9 @@ import Filtro from './components/Filtro.vue';
 import Videojuegos_Pc from './components/PaginasInteriores/VideoJuegos/Pc.vue';
 import Videojuegos_Ps4 from './components/PaginasInteriores/VideoJuegos/Ps4.vue';
 import Videojuegos_XboxOne from './components/PaginasInteriores/VideoJuegos/XboxOne.vue';
+import Accesorios_Pc from './components/PaginasInteriores/Accesorios/Pc.vue';
+import Accesorios_Ps4 from './components/PaginasInteriores/Accesorios/Ps4.vue';
+import Accesorios_XboxOne from './components/PaginasInteriores/Accesorios/XboxOne.vue';
 
 
 const routes = [
@@ -76,6 +79,21 @@ const routes = [
     name: 'Videojuegos_XboxOne',
     path: '/Productos/XboxOne',
     component: Videojuegos_XboxOne
+  },
+  {
+    name: 'Accesorios_Pc',
+    path: '/Accesorios/Pc',
+    component: Accesorios_Pc
+  },
+  {
+    name: 'Accesorios_Ps4',
+    path: '/Accesorios/Ps4',
+    component: Accesorios_Ps4
+  },
+  {
+    name: 'Accesorios_XboxOne',
+    path: '/Accesorios/XboxOne',
+    component: Accesorios_XboxOne
   },
 ];
 

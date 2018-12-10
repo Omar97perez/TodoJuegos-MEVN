@@ -100,10 +100,10 @@
                     <label for="">Tipo de mercha</label>
                     <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
                         <option value=""></option>
-                        <option value="camiseta">Camiseta</option>
-                        <option value="sudadera">Sudadera</option>
-                        <option value="chapa">Chapas</option>
-                        <option value="cartas">Cartas</option>
+                        <option value="figuras">Figuras</option>
+                        <option value="figuraspop">Figuras Pop</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="peluches">Peluches</option>
                     </select>
                 </div>
 

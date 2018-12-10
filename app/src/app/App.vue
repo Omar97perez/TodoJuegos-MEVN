@@ -45,14 +45,10 @@
                                         <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_Switch' }" class="nav-link">Switch</router-link></a>
                                       </div>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Merchandising</a>
-                                      <div class="dropdown-menu" aria-labelledby>
-                                        <a class="dropdown-item" href="#">Figuras</a>
-                                        <a class="dropdown-item" href="#">Figuras Pop</a>
-                                        <a class="dropdown-item" href="#">Ropa</a>
-                                        <a class="dropdown-item" href="#">Peluches</a>
-                                      </div>
+                                    <li class="nav-item active">
+                                      <router-link :to="{ name: 'Merchandising' }" class="nav-link">
+                                        Merchandising
+                                      </router-link>
                                     </li>
                                     <li class="nav-item dropdown">
                                       <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Electronica</a>

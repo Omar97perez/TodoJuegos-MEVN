@@ -25,6 +25,7 @@ import Accesorios_Ps4 from './components/PaginasInteriores/Accesorios/Ps4.vue';
 import Accesorios_XboxOne from './components/PaginasInteriores/Accesorios/XboxOne.vue';
 import Accesorios_Switch from './components/PaginasInteriores/Accesorios/Switch.vue';
 import Consolas from './components/PaginasInteriores/Consola/Consolas.vue';
+import Merchandising from './components/PaginasInteriores/Merchandising/Merchandising.vue';
 
 
 const routes = [
@@ -112,6 +113,11 @@ const routes = [
     name: 'Consolas',
     path: '/Consolas',
     component: Consolas
+  },
+  {
+    name: 'Merchandising',
+    path: '/Merchandising',
+    component: Merchandising
   },
 ];
 

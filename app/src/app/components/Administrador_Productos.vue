@@ -83,6 +83,16 @@
                         <option value="raton">Ratones</option>
                         <option value="cargador">Cargadores</option>
                     </select>
+
+                    <label for="">Plataforma</label>
+                    <select v-model="Producto.plataforma" class="form-control" name="" id="" style="height: 40px;">
+                      <option value=""></option>
+                      <option value="Ps4">PS4</option>
+                      <option value="Pc">PC</option>
+                      <option value="XBoxOne">XBOX ONE</option>
+                      <option value="Switch">SWITCH</option>
+                      <option value="Multi">Multiplataforma</option>
+                    </select>
                 </div>
 
                 <div v-if="Producto.tipo === 'mercha'" class="form-group" id="mercha">

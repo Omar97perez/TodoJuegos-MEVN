@@ -28,6 +28,7 @@
                                         <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_Pc' }" class="nav-link">Pc</router-link></a>
                                         <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_Ps4' }" class="nav-link">Ps4</router-link></a>
                                         <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_XboxOne' }" class="nav-link">XboxOne</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_Switch' }" class="nav-link">Switch</router-link></a>
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -36,6 +37,7 @@
                                         <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_Pc' }" class="nav-link">Pc</router-link></a>
                                         <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_Ps4' }" class="nav-link">Ps4</router-link></a>
                                         <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_XboxOne' }" class="nav-link">XboxOne</router-link></a>
+                                        <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_Switch' }" class="nav-link">Switch</router-link></a>
                                       </div>
                                     </li>
                                     <li class="nav-item dropdown">

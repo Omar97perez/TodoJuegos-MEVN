@@ -33,8 +33,9 @@
                         <option value="0"></option>
                         <option value="videojuego">Juego</option>
                         <option value="consola">Consola</option>
-                        <option value="accesorio">Accesorio</option>
-                        <option value="mercha">Mercha</option>
+                        <option value="accesorio">Accesorios</option>
+                        <option value="mercha">Merchadising</option>
+                        <option value="electronica">Electronica</option>
                     </select>
                 </div>
 
@@ -78,10 +79,21 @@
                     <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
                         <option value=""></option>
                         <option value="mando">Mandos</option>
-                        <option value="silla">Sillas</option>
-                        <option value="teclado">Teclados</option>
-                        <option value="raton">Ratones</option>
+                        <option value="cascos">Cascos</option>
+                        <option value="grips">Grips</option>
                         <option value="cargador">Cargadores</option>
+                        <option value="volantes">volantes</option>
+                        <option value="cover">cover</option>
+                    </select>
+
+                    <label for="">Plataforma</label>
+                    <select v-model="Producto.plataforma" class="form-control" name="" id="" style="height: 40px;">
+                      <option value=""></option>
+                      <option value="Ps4">PS4</option>
+                      <option value="Pc">PC</option>
+                      <option value="XBoxOne">XBOX ONE</option>
+                      <option value="Switch">SWITCH</option>
+                      <option value="Multi">Multiplataforma</option>
                     </select>
                 </div>
 
@@ -89,10 +101,21 @@
                     <label for="">Tipo de mercha</label>
                     <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
                         <option value=""></option>
-                        <option value="camiseta">Camiseta</option>
-                        <option value="sudadera">Sudadera</option>
-                        <option value="chapa">Chapas</option>
-                        <option value="cartas">Cartas</option>
+                        <option value="figuras">Figuras</option>
+                        <option value="figuraspop">Figuras Pop</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="peluches">Peluches</option>
+                    </select>
+                </div>
+
+                <div v-if="Producto.tipo === 'electronica'" class="form-group" id="game">
+                    <label for="">Categoria</label>
+                    <select v-model="Producto.plataforma" class="form-control" name="" id="" style="height: 40px;">
+                        <option value=""></option>
+                        <option value="smartphone">Smartphone</option>
+                        <option value="accsmartphone">Accesorio Smartphone</option>
+                        <option value="tablets">Tablets</option>
+                        <option value="acctablets">Accesorio Tablets</option>
                     </select>
                 </div>
 

@@ -10,7 +10,7 @@
 
   <!-- Página de juegos -->
   <div class="col-md-12">
-      <h2>Más vendidos <b>Ps4</b></h2>
+      <h2><b>Ps4</b></h2>
       <div id="carouselps4" class="carousel slide" data-ride="carousel" data-interval="0">
           <!-- Indicador del carousel -->
           <ol class="carousel-indicators">
@@ -43,7 +43,7 @@
           </a>
       </div><!-- Final carousel -->
 
-      <h2>Más vendidos <b>PC</b></h2>
+      <h2><b>PC</b></h2>
       <div id="carouselpc" class="carousel slide" data-ride="carousel" data-interval="0">
         <!-- Indicador del carousel -->
         <ol class="carousel-indicators">
@@ -75,7 +75,7 @@
         </a>
       </div><!-- Final carousel -->
 
-      <h2>Más vendidos <b>Xbox-One</b></h2>
+      <h2><b>Xbox-One</b></h2>
       <div id="carouselxbox" class="carousel slide" data-ride="carousel" data-interval="0">
         <!-- Indicador del carousel -->
         <ol class="carousel-indicators">
@@ -114,9 +114,9 @@
 </template>
 
 <script>
-  import js from './store';
-  import Item from './Item.vue';
-  import ShoppingCart from './ShoppingCart.vue';
+  import js from '../../store';
+  import Item from '../../Item.vue';
+  import ShoppingCart from '../../ShoppingCart.vue';
 
   export default {
     name: 'app',
@@ -146,21 +146,21 @@
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Ps4 = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego');
+            this.Productos_Ps4 = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'consola');
           });
       },
       getProductos_XBoxOne() {
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_XBoxOne = data.filter(data => data.plataforma == 'XBoxOne' && data.tipo == 'Videojuego');
+            this.Productos_XBoxOne = data.filter(data => data.plataforma == 'XBoxOne' && data.tipo == 'consola');
           });
       },
       getProductos_Pc() {
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego');
+            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'consola');
           });
       },
     }

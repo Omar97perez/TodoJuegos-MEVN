@@ -61,3 +61,4 @@ typings/
 .next
 
 src/public/js/
+app/src/public/js/bundle.js

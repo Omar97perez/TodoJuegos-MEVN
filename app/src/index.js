@@ -6,6 +6,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const jwt = require('./authentication/backend/_services/jwt')
 const errorHandler = require('./authentication/backend/_services/error-handler')
+const history = require('connect-history-api-fallback');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -13,6 +14,7 @@ app.use(bodyParser.json())
 app.use(cors())
 app.use('/users', require('./authentication/backend/users/users-controller'))
 app.use(errorHandler)
+app.use(history());
 
 
 //Conexión con la base de datos, cuando se despliegue en servidor  se tendrá que cambiar la dirección

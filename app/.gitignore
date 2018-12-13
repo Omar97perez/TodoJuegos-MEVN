@@ -8,7 +8,7 @@ yarn-error.log*
 /test/e2e/reports/
 selenium-debug.log
 src/public/js/
-
+src/public/js/bundle.js
 # Editor directories and files
 .idea
 .vscode

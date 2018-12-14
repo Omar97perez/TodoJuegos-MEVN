@@ -127,5 +127,5 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({ routes,mode: 'history'});
+const router = new VueRouter({ routes});
 new Vue(Vue.util.extend({ router, store }, App)).$mount('#app');

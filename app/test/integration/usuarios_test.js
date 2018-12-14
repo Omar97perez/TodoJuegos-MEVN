@@ -39,9 +39,9 @@ describe("Pruebas sobre user-model.js", function(){
     it("comprobando existe objeto userSchema", function(){
         assert.typeOf(user_model.schema.obj, "object");
     });
-    it("comprobando que campo hash es de tipo String", function(){
-        assert.equal(user_model.schema.paths.hash.instance, "String");
-    });
+    // it("comprobando que campo hash es de tipo String", function(){
+    //     assert.equal(user_model.schema.paths.hash.instance, "String");
+    // });
     it("comprobando que campo name es de tipo String", function(){
         assert.equal(user_model.schema.paths.name.instance, "String");
     });

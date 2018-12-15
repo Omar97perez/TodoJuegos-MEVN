@@ -146,21 +146,21 @@
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Ps4 = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego');
+            this.Productos_Ps4 = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego');
           });
       },
       getProductos_XBoxOne() {
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_XBoxOne = data.filter(data => data.plataforma == 'XBoxOne' && data.tipo == 'Videojuego');
+            this.Productos_XBoxOne = data.filter(data => data.plataforma == 'XBoxOne' && data.tipo == 'videojuego');
           });
       },
       getProductos_Pc() {
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego');
+            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego');
           });
       },
     }

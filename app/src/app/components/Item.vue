@@ -3,8 +3,9 @@
     <div class="thumb-wrapper">
 
       <div class="img-box">
-        <img :src="image" :alt="name" class="img-responsive img-fluid">
+        <figure><img :src="image" :alt="name" class="img-responsive img-fluid img-prev" @click=""></figure>
       </div>
+
       <div class="thumb-content">
         <h4>{{ name }}</h4>
         <p class="item-price"><strike>{{ price }}€</strike> <span>{{ offer }}€</span></p>
@@ -25,6 +26,8 @@
 
 <script>
 import { dollars } from './filters';
+import preview from './Preview_producto.vue'
+import js from '../../../config/preview';
 
 export default {
   name: 'item',
@@ -36,6 +39,9 @@ export default {
     addToCart(invId) {
       this.$store.dispatch('addToCart', invId);
     },
+  },
+  components: {
+      js,
   },
 };
 </script>

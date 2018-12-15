@@ -740,3 +740,58 @@ margin-top: 2px;
 .filepond--drip-blob {
 	background-color: #7f8a9a;
 }
+
+/* Preview producto */
+
+.img-prev{
+  max-width: 100px;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid orangeRed;
+}
+
+.img-box{
+  overflow: hidden;
+}
+
+
+
+.img-box figure::before{
+  position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+
+.img-box figure:hover::before {
+	-webkit-animation: shine .75s;
+  animation: shine .75s;
+  filter: grayscale(100%);
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+figure {
+	width: 100px;
+	height: 120px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}

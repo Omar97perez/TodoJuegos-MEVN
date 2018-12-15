@@ -43,12 +43,12 @@
                     <label for="">Categoria</label>
                     <select v-model="Producto.categoria" class="form-control" name="" id="" style="height: 40px;">
                         <option value=""></option>
-                        <option value="aventura">Aventura</option>
-                        <option value="deportes">Deportes</option>
-                        <option value="accion">Acción</option>
-                        <option value="conduccion">Conducción</option>
-                        <option value="estrategia">Estrategia</option>
-                        <option value="rpg">RPG</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Deportes">Deportes</option>
+                        <option value="Acción">Acción</option>
+                        <option value="Conducción">Conducción</option>
+                        <option value="Estrategia">Estrategia</option>
+                        <option value="RPG">RPG</option>
                     </select>
 
                     <label for="">Plataforma</label>

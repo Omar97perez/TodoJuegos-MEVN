@@ -146,7 +146,7 @@
         <!-- Indicador del carousel -->
         <ol class="carousel-indicators">
           <li data-target="#carouselxbox" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselxbox" data-slide-to="1"></li>
+          <li data-target="#carouselxbox" data-slide-to="1"></li>videojuego
           <li data-target="#carouselxbox" data-slide-to="2"></li>
         </ol>
         <!-- Objetos del carousel -->
@@ -281,12 +281,12 @@
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego');
-            this.Productos_Pc_accion = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Acción');
-            this.Productos_Pc_aventura = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Aventura');
-            this.Productos_Pc_deporte = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Deportes');
-            this.Productos_Pc_conduccion = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Conducción');
-            this.Productos_Pc_estrategia = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'Estrategia');
+            this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego');
+            this.Productos_Pc_accion = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego' && data.categoria == 'Acción');
+            this.Productos_Pc_aventura = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego' && data.categoria == 'Aventura');
+            this.Productos_Pc_deporte = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego' && data.categoria == 'Deportes');
+            this.Productos_Pc_conduccion = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego' && data.categoria == 'Conducción');
+            this.Productos_Pc_estrategia = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego' && data.categoria == 'Estrategia');
             this.Productos_Pc_rpg = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'Videojuego' && data.categoria == 'RPG');
           });
       },

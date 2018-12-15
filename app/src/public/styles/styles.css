@@ -748,7 +748,7 @@ margin-top: 2px;
   height: auto;
   border-radius: 4px;
   cursor: pointer;
-  border: 2px solid orangeRed;
+  /* border: 2px solid orangeRed; */
 }
 
 .img-box{

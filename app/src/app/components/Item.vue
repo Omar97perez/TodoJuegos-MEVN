@@ -27,7 +27,7 @@
 <script>
 import { dollars } from './filters';
 import preview from './Preview_producto.vue'
-import js from '../../../config/preview';
+// import js from '../../../config/preview';
 
 export default {
   name: 'item',
@@ -40,8 +40,8 @@ export default {
       this.$store.dispatch('addToCart', invId);
     },
   },
-  components: {
-      js,
-  },
+  // components: {
+  //     js,
+  // },
 };
 </script>

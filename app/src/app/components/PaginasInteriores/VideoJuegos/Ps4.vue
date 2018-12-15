@@ -281,13 +281,13 @@
         fetch('/api/TodoJuegos/Producto/')
           .then(res => res.json())
           .then(data => {
-            this.Productos_Ps4 = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego');
-            this.Productos_Ps4_accion = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego' && data.categoria == 'Acción');
-            this.Productos_Ps4_aventura = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego' && data.categoria == 'Aventura');
-            this.Productos_Ps4_deporte = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego' && data.categoria == 'Deportes');
-            this.Productos_Ps4_conduccion = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego' && data.categoria == 'Conducción');
-            this.Productos_Ps4_estrategia = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego' && data.categoria == 'Estrategia');
-            this.Productos_Ps4_rpg = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'Videojuego' && data.categoria == 'RPG');
+            this.Productos_Ps4 = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego');
+            this.Productos_Ps4_accion = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego' && data.categoria == 'Acción');
+            this.Productos_Ps4_aventura = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego' && data.categoria == 'Aventura');
+            this.Productos_Ps4_deporte = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego' && data.categoria == 'Deportes');
+            this.Productos_Ps4_conduccion = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego' && data.categoria == 'Conducción');
+            this.Productos_Ps4_estrategia = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego' && data.categoria == 'Estrategia');
+            this.Productos_Ps4_rpg = data.filter(data => data.plataforma == 'Ps4' && data.tipo == 'videojuego' && data.categoria == 'RPG');
           });
       },
     }

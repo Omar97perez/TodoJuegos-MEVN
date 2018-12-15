@@ -5,7 +5,7 @@ addons:
   sonarqube:
     organization: "omar97perez-github"
     token:
-        secure: eb5dcf85a9e8247d724584436ac834955eb4b741
+        secure: 1b0b6f2e19a6e3460df039f31900fe75e30af937
 
 sudo: false
 branches:

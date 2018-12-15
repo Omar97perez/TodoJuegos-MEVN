@@ -3,9 +3,9 @@ node_js:
 - '10'
 addons:
   sonarqube:
-    organization: "omar97perez-github"
+    organization: "sytw12018"
     token:
-        secure: 1b0b6f2e19a6e3460df039f31900fe75e30af937
+        secure: 4cccb2af3ec8fa877bb1d36376fb14a02e0121a9
 
 sudo: false
 branches:

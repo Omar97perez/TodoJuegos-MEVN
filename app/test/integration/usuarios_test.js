@@ -4,6 +4,56 @@ const request       = require("supertest")("../../src/authentication/backend/use
 const user_model    = require("../../src/authentication/backend/users/user-model");
 
 describe("Pruebas sobre users-controller.js", function(){
+    describe("Prueba de registro de un usuario", function(){
+        it("comprobando que se registra correctamente", function(){
+            let user_test = {
+                password: "pass_test",
+                name: "test_name",
+                surname: "test_surname",
+                email: "test_email",
+                birthdate: new Date("1997-03-25"),
+                genre: "test_genre",
+                createdDate: new Date("2018-12-15")
+            }
+            request.post("/register").send(user_test).expect(201);
+        });
+    });
+    describe("Prueba de autentificación", function(){
+        it("comprobando que se autentifica correctamente", function(){
+            let user_test = {
+                password: "pass_test",
+                name: "test_name",
+                surname: "test_surname",
+                email: "test_email",
+                birthdate: new Date("1997-03-25"),
+                genre: "test_genre",
+                createdDate: new Date("2018-12-15")
+            }
+            request.post("/register").send(user_test).expect(201);
+            request.post("/authenticate").send(user_test.email, user_test.password).expect(201);
+        });
+    });
+    describe("Prueba de usuario actual", function(){
+        it("comprobando que se retorna correctamente el usuario actual", function(){
+            let user_test = {
+                password: "pass_test",
+                name: "test_name",
+                surname: "test_surname",
+                email: "test_email",
+                birthdate: new Date("1997-03-25"),
+                genre: "test_genre",
+                createdDate: new Date("2018-12-15")
+            }
+            request.post("/register").send(user_test).expect(201);
+            request.post("/authenticate").send(user_test.email, user_test.password).expect(201);
+            request.get("/current").expect('Content-type', /object/);
+        });
+    });
+    describe("Pruebas sobre tipo de contenido", function(){
+        it("comprobando que es JSON", function(){
+            request.get("/").expect('Content-Type', /json/);
+        });
+    });
     describe("Pruebas sobre get", function(){
         it("comprobando correcto funcionamiento de /", function(){
             request.get("/").expect(200);
@@ -39,9 +89,9 @@ describe("Pruebas sobre user-model.js", function(){
     it("comprobando existe objeto userSchema", function(){
         assert.typeOf(user_model.schema.obj, "object");
     });
-    // it("comprobando que campo hash es de tipo String", function(){
-    //     assert.equal(user_model.schema.paths.hash.instance, "String");
-    // });
+    it("comprobando que campo password es de tipo String", function(){
+        assert.equal(user_model.schema.paths.password.instance, "String");
+    });
     it("comprobando que campo name es de tipo String", function(){
         assert.equal(user_model.schema.paths.name.instance, "String");
     });

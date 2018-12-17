@@ -3,6 +3,9 @@ const assert        = chai.assert;
 const request       = require("supertest")("http://localhost:3000");
 
 describe("Pruebas sobre get", function(){
+    it("prueba de estado", function(){
+        request.get("/").expect(200);
+    });
     it("prueba de puerto", function(){
         assert.equal(request.get("port").app,"http://localhost:3000");
     });

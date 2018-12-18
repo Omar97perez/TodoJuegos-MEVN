@@ -12,8 +12,7 @@ describe("Pruebas sobre users-controller.js", function(){
                 surname: "test_surname",
                 email: "test_email",
                 birthdate: new Date("1997-03-25"),
-                genre: "test_genre",
-                createdDate: new Date("2018-12-15")
+                genre: "test_genre"
             }
             request.post("/register").send(user_test).expect(201);
         });
@@ -26,8 +25,7 @@ describe("Pruebas sobre users-controller.js", function(){
                 surname: "test_surname",
                 email: "test_email",
                 birthdate: new Date("1997-03-25"),
-                genre: "test_genre",
-                createdDate: new Date("2018-12-15")
+                genre: "test_genre"
             }
             request.post("/register").send(user_test).expect(201);
             request.post("/authenticate").send(user_test.email, user_test.password).expect(201);
@@ -41,8 +39,7 @@ describe("Pruebas sobre users-controller.js", function(){
                 surname: "test_surname",
                 email: "test_email",
                 birthdate: new Date("1997-03-25"),
-                genre: "test_genre",
-                createdDate: new Date("2018-12-15")
+                genre: "test_genre"
             }
             request.post("/register").send(user_test).expect(201);
             request.post("/authenticate").send(user_test.email, user_test.password).expect(201);

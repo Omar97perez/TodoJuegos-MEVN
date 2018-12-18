@@ -34,112 +34,168 @@ const routes = [
   {
     name: 'Inicio',
     path: '/',
-    component: Inicio
+    component: Inicio,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Productos',
     path: '/Productos',
-    component: Productos
+    component: Productos,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Carrito',
     path: '/Usuario/Carrito',
-    component: Carrito
+    component: Carrito,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Login',
     path: '/Login',
-    component: Login
+    component: Login,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Logout',
     path: '/Logout',
-    component: Logout
+    component: Logout,
   },
   {
     name: 'Registro',
     path: '/Registro',
-    component: Registro
+    component: Registro,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Buscador',
     path: '/Productos/Buscador',
-    component: Buscador
+    component: Buscador,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'ModUsuario',
     path: '/Usuario/ModUsuario',
-    component: ModUsuario
+    component: ModUsuario,
   },
   {
     name: 'Filtro',
     path: '/Productos/Filtro',
-    component: Filtro
+    component: Filtro,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Videojuegos_Pc',
     path: '/Productos/Pc',
-    component: Videojuegos_Pc
+    component: Videojuegos_Pc,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Videojuegos_Ps4',
     path: '/Productos/Ps4',
-    component: Videojuegos_Ps4
+    component: Videojuegos_Ps4,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Videojuegos_XboxOne',
     path: '/Productos/XboxOne',
-    component: Videojuegos_XboxOne
+    component: Videojuegos_XboxOne,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Videojuegos_Switch',
     path: '/Productos/Switch',
-    component: Videojuegos_Switch
+    component: Videojuegos_Switch,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Accesorios_Pc',
     path: '/Accesorios/Pc',
-    component: Accesorios_Pc
+    component: Accesorios_Pc,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Accesorios_Ps4',
     path: '/Accesorios/Ps4',
-    component: Accesorios_Ps4
+    component: Accesorios_Ps4,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Accesorios_XboxOne',
     path: '/Accesorios/XboxOne',
-    component: Accesorios_XboxOne
+    component: Accesorios_XboxOne,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Accesorios_Switch',
     path: '/Accesorios/Switch',
-    component: Accesorios_Switch
+    component: Accesorios_Switch,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Consolas',
     path: '/Consolas',
-    component: Consolas
+    component: Consolas,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Merchandising',
     path: '/Merchandising',
-    component: Merchandising
+    component: Merchandising,
+    meta: {
+      isPublic: true
+    }
   },
   {
     name: 'Electronica',
     path: '/Electronica',
-    component: Electronica
+    component: Electronica,
+    meta: {
+      isPublic: true
+    }
   },
 ];
 
 const router = new VueRouter({ routes});
 
-/* router.beforeEach((to, from, next) => {
-  if (to.path == '/ModUsuario' && store.getters.loggedIn) {
-      next();
+router.beforeResolve((to, from, next) => {
+  if (!to.matched.some(record => record.meta.isPublic) && localStorage.getItem("token") == null) {
+      // next();
+      next('/Login');
   } else {
-      next('Login')
+   // console.log("adsfadsf")
+    next();
   }
-}) */
+})
 new Vue(Vue.util.extend({ router, store }, App)).$mount('#app');

@@ -22,6 +22,9 @@ export default new Vuex.Store({
     REMOVE_FROM_CART(state, index) { state.inCart.splice(index, 1); },
     retrieveToken(state, token) {
       state.token = token
+    },
+    destroyToken(state) {
+      state.token = null
     }
   },
   actions: {
@@ -62,6 +65,23 @@ export default new Vuex.Store({
           reject(error)
         })
       })
+    },
+    destroyToken(context) {
+      if (context.getters.loggedIn) {
+        return new Promise((resolve, reject) => {
+          axios.post('/Logout')
+          .then(response => {
+            localStorage.removeItem('token')
+            context.commit('destroyToken')
+            resolve(response)
+          })
+          .catch(error => {
+            localStorage.removeItem('token')
+            context.commit('destroyToken')
+            reject(error)
+          })
+        })
+      }
     }
 
   },

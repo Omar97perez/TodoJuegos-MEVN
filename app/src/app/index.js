@@ -12,6 +12,7 @@ import Productos from './components/Administrador_Productos.vue';
 import Carrito from './components/Carrito.vue';
 import Inicio from './components/Inicio.vue';
 import Login from './components/Login.vue';
+import Logout from './components/Logout.vue';
 import Registro from './components/Registro.vue';
 import Buscador from './components/Buscador.vue';
 import ModUsuario from './components/ModUsuario.vue';
@@ -49,6 +50,11 @@ const routes = [
     name: 'Login',
     path: '/Login',
     component: Login
+  },
+  {
+    name: 'Logout',
+    path: '/Logout',
+    component: Logout
   },
   {
     name: 'Registro',
@@ -128,4 +134,12 @@ const routes = [
 ];
 
 const router = new VueRouter({ routes});
+
+/* router.beforeEach((to, from, next) => {
+  if (to.path == '/ModUsuario' && store.getters.loggedIn) {
+      next();
+  } else {
+      next('Login')
+  }
+}) */
 new Vue(Vue.util.extend({ router, store }, App)).$mount('#app');

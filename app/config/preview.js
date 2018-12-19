@@ -6,7 +6,7 @@ Vue.use(Vuex);
 new Vuex.Store({
 
     state: {
-        preview: "",
+        preview: '',
     },
     getters: {
         preview: state => state.preview,

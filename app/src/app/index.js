@@ -28,6 +28,7 @@ import Accesorios_Switch from './components/PaginasInteriores/Accesorios/Switch.
 import Consolas from './components/PaginasInteriores/Consola/Consolas.vue';
 import Merchandising from './components/PaginasInteriores/Merchandising/Merchandising.vue';
 import Electronica from './components/PaginasInteriores/Electronica/Electronica.vue';
+import Preview from './components/Preview_producto.vue';
 
 
 const routes = [
@@ -184,6 +185,11 @@ const routes = [
     meta: {
       isPublic: true
     }
+  },
+  {
+    name: 'Preview',
+    path: 'Porducto',
+    component: Preview
   },
 ];
 

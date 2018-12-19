@@ -3,7 +3,7 @@
     <div class="thumb-wrapper">
 
       <div class="img-box">
-        <figure><img :src="image" :alt="name" class="img-responsive img-fluid img-prev" @click=""></figure>
+        <router-link :to="{ name: 'Preview' }"><figure><img :src="image" :alt="name" class="img-responsive img-fluid img-prev" @click="addToPrev(invId)"></figure></router-link>
       </div>
 
       <div class="thumb-content">
@@ -38,6 +38,9 @@ export default {
   methods: {
     addToCart(invId) {
       this.$store.dispatch('addToCart', invId);
+    },
+    addToPrev(invId) {
+      this.$store.dispatch('addToPrev', invId);     
     },
   },
   // components: {

@@ -7,7 +7,8 @@
     "dev": "nodemon src/index.js --ignore 'src/public'",
     "webpack": "webpack --watch --mode development",
     "build": "webpack --mode production",
-    "test": "mocha ./test/integration"
+    "test": "mocha ./test/integration",
+    "jest": "jest ./test/vue_tests"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +18,8 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/register": "^7.0.0",
     "axios": "^0.18.0",
-    "babel-core": "^6.26.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "bcryptjs": "^2.4.3",
@@ -25,6 +27,7 @@
     "cors": "^2.8.5",
     "css-loader": "^1.0.1",
     "express": "^4.16.3",
+    "jest": "^23.6.0",
     "jsonwebtoken": "^8.4.0",
     "jwt-simple": "^0.5.5",
     "mocha": "^5.2.0",
@@ -35,14 +38,31 @@
     "supertest": "^3.3.0",
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",
+    "vue-jest": "^3.0.2",
     "vue-loader": "^15.4.2",
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.17",
+    "vue-test-utils": "^1.0.0-beta.11",
     "vuex": "^3.0.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.17.4"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "src/components/([^\\.]*)$": "<rootDir>/src/app/components/Buscador.vue",
+      "^vue$": "vue/dist/vue.common.js",
+      "src/([^\\.]*)$": "<rootDir>/src/app/$1.vue"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    }
   }
 }

@@ -795,3 +795,104 @@ figure {
 	padding: 0;
 	overflow: hidden;
 }
+
+/* Tarjeta de preview del producto */
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800");
+
+.card {
+  width: 892px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: flex;
+  background: transparent;
+  border: none;
+}
+
+.card .left {
+  width: 50%;
+  min-height: 479px;
+  max-height: 579px;
+  background: #fb6107;
+  border-radius: 23px;
+  display: flex;
+  left: -90%;
+  align-items: center;
+}
+
+.card .left .wordmark {
+  opacity: 0.5;
+  -webkit-transform: rotate(-90deg) scale(6.0);
+          transform: rotate(-90deg) scale(6.0);
+  margin: 0%;
+}
+
+.card .right {
+  width: 80%;
+  height: 100%;
+  background: #434343;
+  position: absolute;
+  text-align: center;
+  left: -20%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(50%);
+  border-radius: 10px;
+}
+
+.card .right h1{
+  color: white;
+  font-size: 35px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card .right h2{
+  color: white;
+  font-size: 25px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card .right .detail p{
+  color: white;
+  font-size: 10px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card .right .prod-img{
+  width: 35%;
+  height: auto;
+  background: #434343;
+  position: absolute;
+  top: 20%;
+  left: -35%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(50%);
+  border-radius: 5px;
+}
+
+.card .right button{
+  border: none;
+  height: 48px;
+  background: #fb6107;
+  border-radius: 90px;
+  font-weight: 300;
+  line-height: 35px;
+  font-size: 14px;
+  padding: 0 24px;
+  color: #fff;
+}

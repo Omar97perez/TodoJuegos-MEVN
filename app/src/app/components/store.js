@@ -8,17 +8,20 @@ export default new Vuex.Store({
   state: {
     forSale: [],
     inCart: [],
+    preview: '',
     token: localStorage.getItem('token') || null,
   },
   getters: {
     forSale: state => state.forSale,
     inCart: state => state.inCart,
+    preview: state => state.preview,
     loggedIn(state){
       return state.token != null
     }
   },
   mutations: {
     ADD_TO_CART(state, invId) { state.inCart.push(invId); },
+    ADD_PREVIEW(state, invId) { state.preview = invId },
     REMOVE_FROM_CART(state, index) { state.inCart.splice(index, 1); },
     retrieveToken(state, token) {
       state.token = token
@@ -27,6 +30,7 @@ export default new Vuex.Store({
   actions: {
     addToCart(context, invId) { context.commit('ADD_TO_CART', invId); },
     removeFromCart(context, index) { context.commit('REMOVE_FROM_CART', index); },
+    addToPrev(context, invId) { context.commit('ADD_PREVIEW', invId); },
     retrieveToken(context, credentials){
       return new Promise((resolve, reject) => {
         axios.post('/users/authenticate', {

@@ -15,7 +15,8 @@ script:
 - cd app
 - npm install
 - npm test
-# - sonar-scanner
+- cd ..
+- sonar-scanner
 cache:
   directories:
   - node_modules

@@ -9,13 +9,26 @@
               <a href="Inicio.html">
                 <router-link :to="{ name: 'Inicio' }" class="nav-link"><img src="img/Logotipo.png" alt="Logotipo" class="logo"></router-link>
               </a>
-              <i>
                 <!---->
-                <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search col-md-4' style='font-size:24px'></i></router-link>
-                <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
-                <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
-                <i class="fa fa-shopping-cart col-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
-              </i>
+                <i>
+                <!-- <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link> -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown"  >
+                  <ul class="navbar-nav">
+                      <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search col-md-4' style='font-size:24px'></i></router-link>
+                      <li class="nav-item dropdown"  v-if="loggedIn">
+                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user col-md-4"style="font-size:24px"></i></a>
+                        <div class="dropdown-menu" aria-labelledby>
+                          <a class="dropdown-item" ><router-link :to="{ name: 'ModUsuario' }" class="nav-link">Modificar Usuario</router-link></a>
+                          <a class="dropdown-item" ><router-link :to="{ name: 'Logout' }" class="nav-link">Logout</router-link></a>
+                        </div>
+                     </li>
+                      <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
+                      <i class="fa fa-shopping-cart col-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
+                </ul>
+              </div>
+            </i>
+
+
             </nav>
 
             <nav class="navbar navbar-expand-lg justify-content-between" style="margin-right:-26px;margin-left:-26px;margin-top:-31px;">

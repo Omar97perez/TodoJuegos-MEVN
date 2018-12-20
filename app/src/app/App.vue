@@ -9,15 +9,12 @@
               <a href="Inicio.html">
                 <router-link :to="{ name: 'Inicio' }" class="nav-link"><img src="img/Logotipo.png" alt="Logotipo" class="logo"></router-link>
               </a>
-              <form class="form-inline">
-                <input class="form-control mr-sm-2 " type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><router-link :to="{ name: 'Buscador' }">Buscar</router-link></button>
-              </form>
               <i>
                 <!---->
-                <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
-                <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
-                <i class="fa fa-shopping-cart col-md-5" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
+                <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search col-md-4' style='font-size:24px'></i></router-link>
+                <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
+                <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
+                <i class="fa fa-shopping-cart col-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
               </i>
             </nav>
 

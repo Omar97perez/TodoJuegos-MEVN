@@ -72,21 +72,6 @@
                       Administrador
                     </router-link>
                   </li>
-                  <li v-if="loggedIn" class="nav-item active">
-                    <router-link :to="{ name: 'ModUsuario' }" class="nav-link">
-                      Modificar Usuario
-                    </router-link>
-                  </li>
-                  <li v-if="loggedIn" class="nav-item active">
-                    <router-link :to="{ name: 'Logout' }" class="nav-link">
-                      Logout
-                    </router-link>
-                  </li>
-                  <li class="nav-item active">
-                    <router-link :to="{ name: 'Filtro' }" class="nav-link">
-                      Filtro
-                    </router-link>
-                  </li>
                 </ul>
               </div>
             </nav>

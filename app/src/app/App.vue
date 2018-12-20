@@ -18,8 +18,8 @@
                       <li class="nav-item dropdown"  v-if="loggedIn">
                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user col-md-4"style="font-size:24px"></i></a>
                         <div class="dropdown-menu" aria-labelledby>
-                          <a class="dropdown-item" ><router-link :to="{ name: 'ModUsuario' }" class="nav-link">Modificar Usuario</router-link></a>
-                          <a class="dropdown-item" ><router-link :to="{ name: 'Logout' }" class="nav-link">Logout</router-link></a>
+                          <a class="dropdown-item" ><router-link :to="{ name: 'ModUsuario' }" class="na-link"> <i class="fa fa-user"style="font-size:24px"></i> Modificar Usuario</router-link></a>
+                          <a class="dropdown-item" ><router-link :to="{ name: 'Logout' }" class="na-link"> <i class="fa fa-sign-out"style="font-size:24px"></i>Logout</router-link></a>
                         </div>
                      </li>
                       <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>

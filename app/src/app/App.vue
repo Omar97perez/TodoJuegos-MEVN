@@ -14,7 +14,7 @@
                 <!-- <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link> -->
                 <div class="collapse navbar-collapse" id="navbarNavDropdown"  >
                   <ul class="navbar-nav">
-                      <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search col-md-6' style='font-size:24px'></i></router-link>
+                      <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search col-md-4' style='font-size:24px'></i></router-link>
                       <li class="nav-item dropdown"  v-if="loggedIn">
                         <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user col-md-4" style="font-size:24px"></i></a>
                         <div class="dropdown-menu" aria-labelledby>
@@ -24,7 +24,7 @@
                      </li>
                       <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
                       <i class="fa fa-shopping-cart col-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
-                      <a  class="fa fa-commenting col-md-4" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/""></a>
+                      <a  class="fa fa-commenting col-md-2" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/""></a>
                 </ul>
               </div>
             </i>

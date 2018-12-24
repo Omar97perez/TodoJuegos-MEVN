@@ -16,6 +16,7 @@ script:
 - npm install
 - npm test
 - cd ..
+- npm install sonar-scanner
 - sonar-scanner
 cache:
   directories:

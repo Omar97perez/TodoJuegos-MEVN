@@ -9,16 +9,27 @@
               <a href="Inicio.html">
                 <router-link :to="{ name: 'Inicio' }" class="nav-link"><img src="img/Logotipo.png" alt="Logotipo" class="logo"></router-link>
               </a>
-              <form class="form-inline">
-                <input class="form-control mr-sm-2 " type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><router-link :to="{ name: 'Buscador' }">Buscar</router-link></button>
-              </form>
-              <i>
                 <!---->
-                <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
-                <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-5" style="font-size:24px"></i></router-link>
-                <i class="fa fa-shopping-cart col-md-5" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
-              </i>
+                <i>
+                <!-- <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link> -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown"  >
+                  <ul class="navbar-nav">
+                      <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search col-md-4' style='font-size:24px'></i></router-link>
+                      <li class="nav-item dropdown"  v-if="loggedIn">
+                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user col-md-4" style="font-size:24px"></i></a>
+                        <div class="dropdown-menu" aria-labelledby>
+                          <a class="dropdown-item" ><router-link :to="{ name: 'ModUsuario' }" class="na-link"> <i class="fa fa-user" style="font-size:24px"></i> Modificar Usuario</router-link></a>
+                          <a class="dropdown-item" ><router-link :to="{ name: 'Logout' }" class="na-link"> <i class="fa fa-sign-out"style="font-size:24px"></i>Logout</router-link></a>
+                        </div>
+                     </li>
+                      <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
+                      <i class="fa fa-shopping-cart col-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
+                      <a  class="fa fa-commenting col-md-2" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/""></a>
+                </ul>
+              </div>
+            </i>
+
+
             </nav>
 
             <nav class="navbar navbar-expand-lg justify-content-between" style="margin-right:-26px;margin-left:-26px;margin-top:-31px;">
@@ -60,21 +71,6 @@
                   <li v-if="loggedIn" class="nav-item active">
                     <router-link :to="{ name: 'Productos' }" class="nav-link">
                       Administrador
-                    </router-link>
-                  </li>
-                  <li v-if="loggedIn" class="nav-item active">
-                    <router-link :to="{ name: 'ModUsuario' }" class="nav-link">
-                      Modificar Usuario
-                    </router-link>
-                  </li>
-                  <li v-if="loggedIn" class="nav-item active">
-                    <router-link :to="{ name: 'Logout' }" class="nav-link">
-                      Logout
-                    </router-link>
-                  </li>
-                  <li class="nav-item active">
-                    <router-link :to="{ name: 'Filtro' }" class="nav-link">
-                      Filtro
                     </router-link>
                   </li>
                 </ul>

@@ -1,27 +1,27 @@
 <template>
-  <div class="col-sm-3">
-    <div class="thumb-wrapper">
+    <div class="col-sm-3">
+      <div class="thumb-wrapper">
 
-      <div class="img-box">
-        <router-link :to="{ name: 'Preview' }"><figure><img :src="image" :alt="name" class="img-responsive img-fluid img-prev" @click="addToPrev(invId)"></figure></router-link>
-      </div>
-
-      <div class="thumb-content">
-        <h4>{{ name }}</h4>
-        <p class="item-price"><strike>{{ price }}€</strike> <span>{{ offer }}€</span></p>
-        <div class="star-rating">
-          <ul class="list-inline">
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-          </ul>
+        <div class="img-box">
+          <router-link :to="{ name: 'Preview' }"><figure><img :src="image" :alt="name" class="img-responsive img-fluid img-prev" @click="addToPrev(invId)"></figure></router-link>
         </div>
-        <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
+
+        <div class="thumb-content">
+          <h4>{{ name }}</h4>
+          <p class="item-price"><strike>{{ price }}€</strike> <span>{{ offer }}€</span></p>
+          <div class="star-rating">
+            <ul class="list-inline">
+              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+              <li class="list-inline-item"><i class="fa fa-star"></i></li>
+              <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+            </ul>
+          </div>
+          <a href="#" @click="addToCart(invId)" class="btn btn-primary">Add to Cart</a>
+        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

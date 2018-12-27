@@ -41,6 +41,7 @@
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",
     "vue-jest": "^3.0.2",
+    "vue-carousel": "^0.16.2",
     "vue-loader": "^15.4.2",
     "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.17",

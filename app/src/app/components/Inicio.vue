@@ -11,37 +11,62 @@
   <!-- Página de juegos -->
   <div class="col-md-12">
       <h2>Más vendidos <b>Ps4</b></h2>
-      <div id="carouselps4" class="carousel slide" data-ride="carousel" data-interval="0">
-          <!-- Indicador del carousel -->
-          <ol class="carousel-indicators">
-            <li data-target="#carouselps4" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselps4" data-slide-to="1"></li>
-            <li data-target="#carouselps4" data-slide-to="2"></li>
-          </ol>
-          <!-- Objetos del carousel -->
-          <div class="carousel-inner">
-            <div class="item carousel-item active">
-              <div class="row">
-                <!-- Objetos del carousel-->
-                <Item
-                  v-for="item in Productos_Ps4"
-                  :key="item._id"
-                  :invId="item._id"
-                  :name="item.titulo"
-                  :image="item.foto"
-                  :price="item.precio"
-                  :offer="item.oferta"/>
+        <div id="carouselps4" class="carousel slide" data-ride="carousel">
+            <!-- Indicador del carousel -->
+            <ol class="carousel-indicators">
+              <li data-target="#carouselps4" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselps4" data-slide-to="1"></li>
+              <li data-target="#carouselps4" data-slide-to="2"></li>
+            </ol>
+            <!-- Objetos del carousel -->
+            <div class="carousel-inner">
+              <div class="item carousel-item active">
+                  <!-- Objetos del carousel-->
+                  <Item
+                    v-for="item in Productos_Ps4.slice(0,4)"
+                    :key="item._id"
+                    :invId="item._id"
+                    :name="item.titulo"
+                    :image="item.foto"
+                    :price="item.precio"
+                    :offer="item.oferta"/>
               </div>
+
+              <div class="item carousel-item">
+                  <!-- Objetos del carousel-->
+                  <Item
+                    v-for="(item, index) in Productos_Ps4" aux="index" v-if="index >= 4"
+                    :key="item._id"
+                    :invId="item._id"
+                    :name="item.titulo"
+                    :image="item.foto"
+                    :price="item.precio"
+                    :offer="item.oferta"/>
+              </div>
+
+              <div class="item carousel-item">
+                  <!-- Objetos del carousel-->
+                  <Item
+                    v-for="(item, index) in Productos_Ps4" aux="index" v-if="index >= 8"
+                    :key="item._id"
+                    :invId="item._id"
+                    :name="item.titulo"
+                    :image="item.foto"
+                    :price="item.precio"
+                    :offer="item.oferta"/>
+              </div>
+
             </div>
-          </div>
-          <!-- Control del carousel -->
-          <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-          </a>
-          <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-          </a>
-      </div><!-- Final carousel -->
+            <!-- Control del carousel -->
+            <a class="carousel-control left carousel-control-prev" href="#carouselps4" data-slide="prev">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control right carousel-control-next" href="#carouselps4" data-slide="next">
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+
+      <!-- Final carousel -->
 
       <h2>Más vendidos <b>PC</b></h2>
       <div id="carouselpc" class="carousel slide" data-ride="carousel" data-interval="0">
@@ -56,7 +81,7 @@
           <div class="item carousel-item active">
             <div class="row">
              <Item
-                  v-for="item in Productos_Pc"
+                  v-for="item in Productos_Pc.slice(0,4)"
                   :key="item._id"
                   :invId="item._id"
                   :name="item.titulo"
@@ -65,12 +90,37 @@
                   :offer="item.oferta"/>
             </div>
           </div>
+
+          <div class="item carousel-item">
+              <!-- Objetos del carousel-->
+              <Item
+                v-for="(item, index) in Productos_Pc" aux="index" v-if="index >= 4"
+                :key="item._id"
+                :invId="item._id"
+                :name="item.titulo"
+                :image="item.foto"
+                :price="item.precio"
+                :offer="item.oferta"/>
+          </div>
+
+          <div class="item carousel-item">
+              <!-- Objetos del carousel-->
+              <Item
+                v-for="(item, index) in Productos_Pc" aux="index" v-if="index >= 8"
+                :key="item._id"
+                :invId="item._id"
+                :name="item.titulo"
+                :image="item.foto"
+                :price="item.precio"
+                :offer="item.oferta"/>
+          </div>
+
         </div>
         <!-- Control del carousel -->
-        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+        <a class="carousel-control left carousel-control-prev" href="#carouselpc" data-slide="prev">
           <i class="fa fa-angle-left"></i>
         </a>
-        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+        <a class="carousel-control right carousel-control-next" href="#carouselpc" data-slide="next">
           <i class="fa fa-angle-right"></i>
         </a>
       </div><!-- Final carousel -->
@@ -88,7 +138,7 @@
           <div class="item carousel-item active">
             <div class="row">
               <Item
-              v-for="item in Productos_XBoxOne"
+              v-for="item in Productos_XBoxOne.slice(0,4)"
               :key="item._id"
               :invId="item._id"
               :name="item.titulo"
@@ -97,13 +147,38 @@
               :offer="item.oferta"/>
             </div>
           </div>
+
+          <div class="item carousel-item">
+              <!-- Objetos del carousel-->
+              <Item
+                v-for="(item, index) in Productos_XBoxOne" aux="index" v-if="index >= 4"
+                :key="item._id"
+                :invId="item._id"
+                :name="item.titulo"
+                :image="item.foto"
+                :price="item.precio"
+                :offer="item.oferta"/>
+          </div>
+
+          <div class="item carousel-item">
+              <!-- Objetos del carousel-->
+              <Item
+                v-for="(item, index) in Productos_XBoxOne" aux="index" v-if="index >= 8"
+                :key="item._id"
+                :invId="item._id"
+                :name="item.titulo"
+                :image="item.foto"
+                :price="item.precio"
+                :offer="item.oferta"/>
+          </div>
+
         </div>
 
         <!-- Control del carousel -->
-        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+        <a class="carousel-control left carousel-control-prev" href="#carouselxbox" data-slide="prev">
           <i class="fa fa-angle-left"></i>
         </a>
-        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+        <a class="carousel-control right carousel-control-next" href="#carouselxbox" data-slide="next">
           <i class="fa fa-angle-right"></i>
         </a>
       </div><!-- Final carousel -->
@@ -117,6 +192,7 @@
   import js from './store';
   import Item from './Item.vue';
   import ShoppingCart from './ShoppingCart.vue';
+  import { Carousel, Slide } from 'vue-carousel';
 
   export default {
     name: 'app',
@@ -163,6 +239,9 @@
             this.Productos_Pc = data.filter(data => data.plataforma == 'Pc' && data.tipo == 'videojuego');
           });
       },
-    }
+      inc_sliderPS4(indexPS4){
+
+      }
+    },
   };
 </script>

@@ -10,6 +10,7 @@ export default new Vuex.Store({
     inCart: [],
     preview: '',
     token: localStorage.getItem('token') || null,
+    userData: {}
   },
   getters: {
     forSale: state => state.forSale,
@@ -17,7 +18,13 @@ export default new Vuex.Store({
     preview: state => state.preview,
     loggedIn(state){
       return state.token != null
-    }
+    },
+    theToken: state => state.token,
+    name: state => state.userData.name,
+    surname: state => state.userData.surname,
+    birthdate: state => state.userData.birthdate,
+    genre: state => state.userData.genre,
+    email: state => state.userData.email
   },
   mutations: {
     ADD_TO_CART(state, invId) { state.inCart.push(invId); },
@@ -28,6 +35,12 @@ export default new Vuex.Store({
     },
     destroyToken(state) {
       state.token = null
+    },
+    get_user_data(state, data) {
+      state.userData = data
+    },
+    cleanData(state) {
+      state.userData = {}
     }
   },
   actions: {
@@ -77,11 +90,31 @@ export default new Vuex.Store({
           .then(response => {
             localStorage.removeItem('token')
             context.commit('destroyToken')
+            context.commit('cleanData')
             resolve(response)
           })
           .catch(error => {
             localStorage.removeItem('token')
             context.commit('destroyToken')
+            context.commit('cleanData')
+            reject(error)
+          })
+        })
+      }
+    },
+    get_user_data(context) {
+      console.log(context.getters.theToken)
+      if (context.getters.loggedIn) {
+        return new Promise((resolve, reject) => {
+          axios.post('/users/user_data', { token: localStorage.getItem('token')})
+          .then(response => {
+            // console.log(response.data)
+            localStorage.setItem('userData', response.data)
+            console.log(localStorage.getItem('userData'))
+            context.commit('get_user_data', response.data)
+            resolve(response)
+          })
+          .catch(error => {
             reject(error)
           })
         })

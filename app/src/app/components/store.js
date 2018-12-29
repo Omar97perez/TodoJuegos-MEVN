@@ -24,7 +24,11 @@ export default new Vuex.Store({
     surname: state => state.userData.surname,
     birthdate: state => state.userData.birthdate,
     genre: state => state.userData.genre,
-    email: state => state.userData.email
+    email: state => state.userData.email,
+    _id: state => state.userData._id
+  },
+  setters: {
+    
   },
   mutations: {
     ADD_TO_CART(state, invId) { state.inCart.push(invId); },
@@ -109,8 +113,8 @@ export default new Vuex.Store({
           axios.post('/users/user_data', { token: localStorage.getItem('token')})
           .then(response => {
             // console.log(response.data)
-            localStorage.setItem('userData', response.data)
-            console.log(localStorage.getItem('userData'))
+            // localStorage.setItem('userData', response.data)
+            //console.log(localStorage.getItem('userData'))
             context.commit('get_user_data', response.data)
             resolve(response)
           })
@@ -119,6 +123,25 @@ export default new Vuex.Store({
           })
         })
       }
+    },
+    update(context,data) {
+      return new Promise((resolve, reject) => {
+        axios.put(`/users/${context.getters._id}`, {
+          name: data.name,
+          surname: data.surname,
+          email: data.email,
+          birthdate: data.birthdate,
+          genre: data.genre,
+          password: data.password
+        })
+        .then(response => {
+          context.dispatch('get_user_data')
+          resolve(response)
+        })
+        .catch(error => {
+          reject(error)
+        })
+      })
     }
 
   },

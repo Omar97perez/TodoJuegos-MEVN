@@ -62,7 +62,7 @@ async function create(userParam, res) {
 
 async function update(id, userParam) {
     const user = await User.findById(id)
-
+    // console.log(userParam)
     // validate
     if (!user) throw 'User not found'
     if (user.email !== userParam.email && await User.findOne({ email: userParam.email })) {
@@ -72,11 +72,25 @@ async function update(id, userParam) {
 
     // hash password if it was entered
     if (userParam.password) {
-        userParam.password = bcrypt.hashSync(userParam.password, 10)
+        console.log(userParam.password)
+        user.password = bcrypt.hashSync(userParam.password, 10)
     }
-
+    if(userParam.name) {
+        user.name = userParam.name
+    }
+    if(userParam.surname) {
+        user.surname = userParam.surname
+    }
+    if(userParam.birthdate) {
+        user.birthdate = userParam.birthdate
+    }
+    if(userParam.genre) {
+        user.genre = userParam.genre
+    }
     // copy userParam properties to user
-    Object.assign(user, userParam)
+    // Object.assign(user, userParam)
+    // console.log("USUARIO MODIFICADO")
+    // console.log(user)
 
     await user.save()
 }

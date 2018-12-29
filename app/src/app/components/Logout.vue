@@ -7,6 +7,10 @@
       .then(response => {
         this.$router.push({ name: 'Inicio'})
       })
+      .catch(error => {
+        this.$router.push({ name: 'Inicio'})
+        reject(error)
+      })
     }
     
   }

@@ -15,7 +15,6 @@ script:
 - cd app
 - npm install
 - npm test
-- npm jest
 - cd ..
 - npm install sonar-scanner
 - sonar-scanner

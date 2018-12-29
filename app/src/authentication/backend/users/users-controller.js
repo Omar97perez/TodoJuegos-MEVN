@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userService = require('./user-service');
+const jwt = require('../_services/jwt');
 
 // routes
 router.post('/authenticate', authenticate);
@@ -10,6 +11,7 @@ router.get('/current', getCurrent);
 router.get('/:id', getById);
 router.put('/:id', update);
 router.delete('/:id', _delete);
+router.post('/user_data', data_user);
 
 module.exports = router;
 
@@ -54,4 +56,23 @@ function _delete(req, res, next) {
     userService.delete(req.params.id)
         .then(() => res.json({}))
         .catch(err => next(err));
+}
+
+function data_user(req, res, next) {
+    if(!req.body.token) {
+        return res.status(403).send({ message: 'No tienes autorización' })
+    }
+    const token = req.body.token
+    // console.log(token)
+    jwt.decodeToken(token)
+    .then(payload=> {
+        // console.log(payload)
+        userService.getById(payload)
+        // .then(user => {console.log(user)})
+        .then(user => user ? res.json(user) : res.sendStatus(404))
+        .catch(err => next(err));
+    })
+    
+    
+
 }

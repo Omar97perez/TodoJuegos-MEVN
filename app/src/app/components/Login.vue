@@ -33,6 +33,7 @@ export default {
         password: this.password
       })
       .then(response => {
+        this.$store.dispatch('get_user_data')
         this.$router.push({ name: 'Inicio' })
       })
     }

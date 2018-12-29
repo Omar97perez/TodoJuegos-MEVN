@@ -24,7 +24,7 @@
                      </li>
                       <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
                       <i class="fa fa-shopping-cart col-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
-                      <a  class="fa fa-commenting col-md-2" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/""></a>
+                      <a  class="fa fa-commenting col-md-2" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/"></a>
                 </ul>
               </div>
             </i>
@@ -209,6 +209,9 @@ export default {
     return{
       Productos: [],
     }
+  },
+  mounted() {
+    this.$store.dispatch('get_user_data')
   },
   computed: {
     inCart() { return this.$store.getters.inCart; },

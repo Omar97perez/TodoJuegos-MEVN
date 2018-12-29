@@ -1,14 +1,14 @@
 <template>
   <div class="container-fluid">
-    <strong><p class="titulo-footer">Cuenta de usuario {{User.name}}</p></strong>
+    <strong><p class="titulo-footer">Cuenta de usuario {{getName}}</p></strong>
     <form id="registro" method="POST" action="/api/signup" class="text-left">
       <div class="form-group">
         <label for="name">Nombre</label>
-        <input type="text" class="form-control" id="name" v-model="User.name" placeholder="Nombre">
+        <input type="text" class="form-control" id="name" v-model="getName" placeholder="Nombre">
       </div>
       <div class="form-group">
         <label for="surname">Apellidos</label>
-        <input type="text" class="form-control" id="surname" v-model="User.surname" placeholder="Apellidos">
+        <input type="text" class="form-control" id="surname" v-model="getSurname" placeholder="Apellidos">
       </div>
       <div class="form-group">
         <label for="birthdate">
@@ -20,7 +20,7 @@
         <label for="email">
           Email
         </label>
-        <input type="email" class="form-control" id="email" v-model="User.email" placeholder="Email">
+        <input type="email" class="form-control" id="email" v-model="getEmail" placeholder="Email">
       </div>
       <div class="form-group">
         <label for="password">Contraseña</label>
@@ -55,32 +55,28 @@
 </template>
 
 <script>
-class Usuario{
-  constructor(id='',name='',surname='',email=''){
-    this._id=id;
-    this.name=name;
-    this.surname=surname;
-    this.email=email;
-  }
-}
 export default {
   data() {
     return{
-      Usuario: new Usuario(),
-      User: new Usuario('2','Omar','caquita','el_moreno@dafadfa.asdfadf'),
-      edit: false
     }
   },
   created(){
-    this.getUsuario();
   },
-  methods: {
-    getUsuario() {
-      // fetch('/api/TodoJuegos/Usuario/')
-      //   .then(res => res.json())
-      //   .then(data => {
-      //     this.Productos = data;
-      //   });
+  computed: {
+    getName() {
+      return this.$store.getters.name
+    },
+    getSurname() {
+      return this.$store.getters.surname
+    },
+    getBirthdate() {
+      return this.$store.getters.birthdate
+    },
+    getGenre() {
+      return this.$store.getters.genre
+    },
+    getEmail() {
+      return this.$store.getters.email
     }
   }
 }

@@ -54,12 +54,8 @@ describe("Item.vue", () => {
 
   it("Comprobando que existe etiqueta strike y si tiene contenido", () => {
     expect(wrapper.contains('strike')).toBe(true)
-    const wrapper_2 = mount(item, {
-      props:{
-        price: '34'
-      }
-    })
-    expect(wrapper_2.find('strike').vnode.context.$options.props.price.type).toEqual('34')
+    wrapper.setProps({price:'34'})
+    expect(wrapper.find('strike').text()).toEqual('34€')
   });
 
   it("Comprobando que se encuentra clase star-rating", () => {

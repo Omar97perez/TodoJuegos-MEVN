@@ -30,6 +30,7 @@
     "firebase": "^5.7.1",
     "firebase-tools": "^6.2.2",
     "jest": "^23.6.0",
+    "jest-fetch-mock": "^2.1.0",
     "jsonwebtoken": "^8.4.0",
     "jwt-simple": "^0.5.5",
     "mocha": "^5.2.0",
@@ -54,6 +55,10 @@
     "nodemon": "^1.17.4"
   },
   "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ],
     "moduleNameMapper": {
       "src/components/([^\\.]*)$": "<rootDir>/src/app/components/Buscador.vue",
       "^vue$": "vue/dist/vue.common.js",

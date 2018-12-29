@@ -50,6 +50,7 @@
         </div>
       </div>
       <button type="submit" value="guardar" class="btn btn-outline-success">Guardar datos</button>
+      <div id="merror"></div>
     </form>
   </div>
 </template>
@@ -97,7 +98,14 @@ export default {
         genre: this.genre
       })
       .then(response => {
-        this.$router.push({ name: 'ModUsuario' })
+        // console.log(`Respuesta : ${Object.keys(response.data)}`)
+        console.log(`Respuesta : ${response.data.message}`)
+        $('#merror').empty()
+        $('#merror').append(`
+            <br>
+            <p role="alert" class="mensaje">${response.data.message}</p>
+          `)
+        //this.$router.push({ name: 'ModUsuario' })
       })
     }
   }

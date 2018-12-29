@@ -18,11 +18,11 @@ async function authenticate({ email, password }) {
     const user = await User.findOne({ email })
     
     if (user && bcrypt.compareSync(password, user.password)) {
-        console.log(user)
+        //console.log(user)
         // const { password, ...userWithoutHash } = user.toObject()
         // console.log(...userWithoutHash)
         const token = jwt.createToken(user)
-        console.log(token)
+        //console.log(token)
         return {
             // ...userWithoutHash,
             token

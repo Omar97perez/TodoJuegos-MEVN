@@ -48,7 +48,7 @@ function getById(req, res, next) {
 
 function update(req, res, next) {
     userService.update(req.params.id, req.body)
-        .then(() => res.json({}))
+        .then(() => res.status(201).json({ message: 'Usuario modificado correctamente' }))
         .catch(err => next(err));
 }
 

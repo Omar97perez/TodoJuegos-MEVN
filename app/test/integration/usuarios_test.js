@@ -80,6 +80,21 @@ describe("Pruebas sobre users-controller.js", function(){
             request.delete("/:id").expect(200);
         });
     });
+    describe("Prueba sobre data_user", function(){
+        it("comprobando que testea correctamente la autorización del usuario", function(){
+            let user_test = {
+                password: "pass_test",
+                name: "test_name",
+                surname: "test_surname",
+                email: "test_email",
+                birthdate: new Date("1997-03-25"),
+                genre: "test_genre"
+            }
+            request.post("/register").send(user_test).expect(201);
+            request.post("/authenticate").send(user_test.email, user_test.password).expect(201);
+            request.post("/user_data").expect(403, 'No tienes autorización')
+        });
+    });
 });
 
 describe("Pruebas sobre user-model.js", function(){

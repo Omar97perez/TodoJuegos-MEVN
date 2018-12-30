@@ -1,30 +1,30 @@
 <template>
   <div class="container-fluid">
     <strong><p class="titulo-footer">Cuenta de usuario {{getName}}</p></strong>
-    <form id="registro" method="POST" action="/api/signup" class="text-left">
+    <form id="actualizar" @submit.prevent="update" class="text-left">
       <div class="form-group">
         <label for="name">Nombre</label>
-        <input type="text" class="form-control" id="name" v-model="getName" placeholder="Nombre">
+        <input type="text" class="form-control" id="name" v-model="name" :placeholder="getName">
       </div>
       <div class="form-group">
         <label for="surname">Apellidos</label>
-        <input type="text" class="form-control" id="surname" v-model="getSurname" placeholder="Apellidos">
+        <input type="text" class="form-control" id="surname" v-model="surname" :placeholder="getSurname">
       </div>
       <div class="form-group">
         <label for="birthdate">
           Fecha de nacimiento
         </label>
-        <input type="date" class="form-control" id="birthdate" placeholder="Fecha de nacimiento">
+        <input type="date" class="form-control" id="birthdate" :placeholder="getBirthdate">
       </div>
       <div class="form-group">
         <label for="email">
           Email
         </label>
-        <input type="email" class="form-control" id="email" v-model="getEmail" placeholder="Email">
+        <input type="email" class="form-control" id="email" v-model="email" :placeholder="getEmail">
       </div>
       <div class="form-group">
         <label for="password">Contraseña</label>
-        <input type="password" class="form-control" id="password" placeholder="Contraseña">
+        <input type="password" class="form-control" v-model="password" id="password" placeholder="Contraseña">
       </div>
       <div class="form-group">
         <label class="col-form-label col-sm-2">Género</label>
@@ -49,15 +49,23 @@
           </div>
         </div>
       </div>
-      <button @submit="actualizar()" value="guardar" class="btn btn-outline-success">Guardar datos</button>
+      <button type="submit" value="guardar" class="btn btn-outline-success">Guardar datos</button>
+      <div id="merror"></div>
     </form>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'ModUsuario',
   data() {
-    return{
+    return {
+      name: '',
+      surname: '',
+      email: '',
+      password: '',
+      birthdate: '',
+      genre: ''
     }
   },
   created(){
@@ -77,6 +85,28 @@ export default {
     },
     getEmail() {
       return this.$store.getters.email
+    }
+  },
+  methods: {
+    update () {
+      this.$store.dispatch('update', {
+        name: this.name,
+        surname: this.surname,
+        email: this.email,
+        password: this.password,
+        birthdate: this.birthdate,
+        genre: this.genre
+      })
+      .then(response => {
+        // console.log(`Respuesta : ${Object.keys(response.data)}`)
+        console.log(`Respuesta : ${response.data.message}`)
+        $('#merror').empty()
+        $('#merror').append(`
+            <br>
+            <p role="alert" class="mensaje">${response.data.message}</p>
+          `)
+        //this.$router.push({ name: 'ModUsuario' })
+      })
     }
   }
 }

@@ -48,7 +48,7 @@ function getById(req, res, next) {
 
 function update(req, res, next) {
     userService.update(req.params.id, req.body)
-        .then(() => res.json({}))
+        .then(() => res.status(201).json({ message: 'Usuario modificado correctamente' }))
         .catch(err => next(err));
 }
 
@@ -72,7 +72,4 @@ function data_user(req, res, next) {
         .then(user => user ? res.json(user) : res.sendStatus(404))
         .catch(err => next(err));
     })
-    
-    
-
 }

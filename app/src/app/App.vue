@@ -4,71 +4,83 @@
     <header>
       <div class="container" >
         <div class="row">
-          <div class="col-md-12 fondo-juegos">
-            <nav class="navbar navbar-expand-lg justify-content-between">
-              <a href="Inicio.html">
-                <router-link :to="{ name: 'Inicio' }" class="nav-link"><img src="img/Logotipo.png" alt="Logotipo" class="logo"></router-link>
-              </a>
-                <!---->
-                <i>
-                <!-- <router-link v-if="loggedIn" :to="{ name: 'ModUsuario' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link> -->
-                <div class="collapse navbar-collapse" id="navbarNavDropdown"  >
-                  <ul class="navbar-nav">
-                      <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search col-md-4' style='font-size:24px'></i></router-link>
-                      <li class="nav-item dropdown"  v-if="loggedIn">
-                        <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user col-md-4" style="font-size:24px"></i></a>
-                        <div class="dropdown-menu" aria-labelledby>
-                          <a class="dropdown-item" ><router-link :to="{ name: 'ModUsuario' }" class="na-link"> <i class="fa fa-user" style="font-size:24px"></i> Modificar Usuario</router-link></a>
-                          <a class="dropdown-item" ><router-link :to="{ name: 'Logout' }" class="na-link"> <i class="fa fa-sign-out"style="font-size:24px"></i>Logout</router-link></a>
-                        </div>
-                     </li>
-                      <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user col-md-4" style="font-size:24px"></i></router-link>
-                      <i class="fa fa-shopping-cart col-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
-                      <a  class="fa fa-commenting col-md-2" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/"></a>
+          <div class="col-12 fondo-juegos">
+            <nav class="navbar navbar-expand-md navbar-light sticky-top">
+              <div class="col-11 col-md-9 col-lg-10">
+                <a href="#">
+                  <router-link :to="{ name: 'Inicio' }" class="nav-link"><img src="img/Logotipo.png" alt="Logotipo" class="logo"></router-link>
+                </a>
+              </div>
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#iconos" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="iconos">
+                <ul class="navbar-nav text-right">
+                  <router-link :to="{ name: 'Buscador' }"><i class='fa fa-search mb-sm-4 mr-md-4' style='font-size:24px'></i></router-link>
+
+                  <li class="nav-item dropdown mb-sm-4 mr-md-4"  v-if="loggedIn">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" style="font-size:24px"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="login">
+                      <a class="dropdown-item" ><router-link :to="{ name: 'ModUsuario' }" class="na-link"> <i class="fa fa-user" style="font-size:24px"></i>Modificar Usuario</router-link></a>
+                      <a class="dropdown-item" ><router-link :to="{ name: 'Logout' }" class="na-link"> <i class="fa fa-sign-out"style="font-size:24px"></i>Logout</router-link></a>
+                    </div>
+                  </li>
+                  <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user mb-sm-4 mr-md-4" style="font-size:24px"></i></router-link>
+
+                  <a  class="fa fa-commenting mb-sm-4 mr-md-4" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/""></a>
+
+                  <i class="fa fa-shopping-cart mb-sm-4 mr-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
                 </ul>
               </div>
-            </i>
-
-
             </nav>
 
-            <nav class="navbar navbar-expand-lg justify-content-between" style="margin-right:-26px;margin-left:-26px;margin-top:-31px;">
-              <div class="collapse navbar-collapse" id="navbarNavDropdown"  style="background-color:#434343">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="margin-right:-15px;margin-left:-15px;margin-top:-31px;">
+
+              <div class="col-sm-11 col-md-1">
+              </div>
+
+              <button class="navbar-toggler mt-3 mb-3" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VideoJuegos</a>
-                    <div class="dropdown-menu" aria-labelledby>
+                  <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle pl-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VideoJuegos</a>
+                    <div class="dropdown-menu" aria-labelledby="videojuegos">
                       <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_Pc' }" class="nav-link">Pc</router-link></a>
                       <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_Ps4' }" class="nav-link">Ps4</router-link></a>
                       <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_XboxOne' }" class="nav-link">XboxOne</router-link></a>
                       <a class="dropdown-item" ><router-link :to="{ name: 'Videojuegos_Switch' }" class="nav-link">Switch</router-link></a>
                     </div>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item active pl-3">
                     <router-link :to="{ name: 'Consolas' }" class="nav-link">
                       Consolas
                     </router-link>
                   </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesorios</a>
-                    <div class="dropdown-menu" aria-labelledby>
+                  <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle pl-3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accesorios</a>
+                    <div class="dropdown-menu" aria-labelledby="accesorios">
                       <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_Pc' }" class="nav-link">Pc</router-link></a>
                       <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_Ps4' }" class="nav-link">Ps4</router-link></a>
                       <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_XboxOne' }" class="nav-link">XboxOne</router-link></a>
                       <a class="dropdown-item" ><router-link :to="{ name: 'Accesorios_Switch' }" class="nav-link">Switch</router-link></a>
                     </div>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item active pl-3">
                     <router-link :to="{ name: 'Merchandising' }" class="nav-link">
                       Merchandising
                     </router-link>
                   </li>
-                  <li class="nav-item active">
+                  <li class="nav-item active pl-3">
                     <router-link :to="{ name: 'Electronica' }" class="nav-link">
                       Electronica
                     </router-link>
                   </li>
-                  <li v-if="loggedIn" class="nav-item active">
+                  <li v-if="loggedIn" class="nav-item active pl-3">
                     <router-link :to="{ name: 'Productos' }" class="nav-link">
                       Administrador
                     </router-link>
@@ -209,9 +221,6 @@ export default {
     return{
       Productos: [],
     }
-  },
-  mounted() {
-    this.$store.dispatch('get_user_data')
   },
   computed: {
     inCart() { return this.$store.getters.inCart; },

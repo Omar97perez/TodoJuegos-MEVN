@@ -222,6 +222,9 @@ export default {
       Productos: [],
     }
   },
+  mounted() {
+     this.$store.dispatch('get_user_data')
+   },
   computed: {
     inCart() { return this.$store.getters.inCart; },
     numInCart() { return this.inCart.length; },

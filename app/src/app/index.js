@@ -64,7 +64,8 @@ const routes = [
     path: '/Login',
     component: Login,
     meta: {
-      isPublic: true
+      isPublic: true,
+      justPublic: true
     }
   },
   {
@@ -77,7 +78,8 @@ const routes = [
     path: '/Registro',
     component: Registro,
     meta: {
-      isPublic: true
+      isPublic: true,
+      justPublic: true
     }
   },
   {
@@ -203,15 +205,21 @@ router.beforeEach((to, from, next) => {
       // next();
       next('/Login');
   } else {
-    console.log(store.getters.name )
-    if(to.matched.some(record => record.meta.isAdmin) && (store.getters.name != "root")) {
-      console.log(store.getters.name )
+    // console.log(store.getters.name )
+    if(to.matched.some(record => record.meta.justPublic) && localStorage.getItem("token")) {
       next('/');
     }
     else {
-   // console.log("adsfadsf")
-      next();
+      if(to.matched.some(record => record.meta.isAdmin) && (store.getters.name != "root")) {
+        console.log(store.getters.name )
+        next('/');
+      }
+      else {
+     // console.log("adsfadsf")
+        next();
+      }
     }
+    
   }
 })
 new Vue(Vue.util.extend({ router, store }, App)).$mount('#app');

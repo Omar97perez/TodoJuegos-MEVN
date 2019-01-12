@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
     <strong><p class="titulo-footer">Inicio Sesion</p></strong>
+    <div id="m_error_l"></div>
     <form id="login" @submit.prevent="login" class="text-left">
       <div class="form-group">
         <label for="email"><b>Email</b></label>
@@ -35,6 +36,15 @@ export default {
       .then(response => {
         this.$store.dispatch('get_user_data')
         this.$router.push({ name: 'Inicio' })
+      })
+      .catch(error => {
+        $('#m_error_l').empty()
+        $('#m_error_l').append(`
+            <br>
+            <div class="alert alert-danger" role="alert">
+              Email o contraseña incorrectos.
+            </div>
+          `)
       })
     }
   }

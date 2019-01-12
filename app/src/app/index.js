@@ -48,7 +48,7 @@ const routes = [
     path: '/Productos',
     component: Productos,
     meta: {
-      isPublic: true
+      isAdmin: true
     }
   },
   {
@@ -198,13 +198,20 @@ const routes = [
 
 const router = new VueRouter({ routes});
 
-router.beforeResolve((to, from, next) => {
+router.beforeEach((to, from, next) => {
   if (!to.matched.some(record => record.meta.isPublic) && localStorage.getItem("token") == null) {
       // next();
       next('/Login');
   } else {
+    console.log(store.getters.name )
+    if(to.matched.some(record => record.meta.isAdmin) && (store.getters.name != "root")) {
+      console.log(store.getters.name )
+      next('/');
+    }
+    else {
    // console.log("adsfadsf")
-    next();
+      next();
+    }
   }
 })
 new Vue(Vue.util.extend({ router, store }, App)).$mount('#app');

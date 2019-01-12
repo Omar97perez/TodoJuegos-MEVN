@@ -29,7 +29,7 @@
                   </li>
                   <router-link v-else :to="{ name: 'Login' }"><i class="fa fa-user mb-sm-4 mr-md-4" style="font-size:24px"></i></router-link>
 
-                  <a  class="fa fa-commenting mb-sm-4 mr-md-4" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/""></a>
+                  <a  class="fa fa-commenting mb-sm-4 mr-md-4" style="font-size:24px;color:#323232" href="https://todojuegos-c5f40.firebaseapp.com/"></a>
 
                   <i class="fa fa-shopping-cart mb-sm-4 mr-md-4" style="font-size:24px" data-toggle="modal" data-target="#shoppingCart">({{ numInCart }})</i>
                 </ul>
@@ -80,7 +80,7 @@
                       Electronica
                     </router-link>
                   </li>
-                  <li v-if="loggedIn" class="nav-item active pl-3">
+                  <li v-if="isAdmin" class="nav-item active pl-3">
                     <router-link :to="{ name: 'Productos' }" class="nav-link">
                       Administrador
                     </router-link>
@@ -240,6 +240,9 @@ export default {
     },
     loggedIn() {
       return this.$store.getters.loggedIn
+    },
+    isAdmin() {
+      return this.$store.getters.isAdmin
     }
   },
   filters: {

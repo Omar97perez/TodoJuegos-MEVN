@@ -22,10 +22,15 @@ function authenticate(req, res, next) {
 }
 
 function register(req, res, next) {
-    console.log(req.body)
+    // console.log(req.body)
+    // console.log("function register")
     userService.create(req.body)
         .then(() =>  res.status(201).send({}))
-        .catch(err => next(err));
+        .catch(err => {
+            //console.log(err)
+            next(err)
+            
+        });
 }
 
 function getAll(req, res, next) {

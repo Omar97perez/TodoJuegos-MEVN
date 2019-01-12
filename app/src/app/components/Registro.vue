@@ -1,26 +1,27 @@
 <template>
   <div class="container-fluid">
     <strong><p class="titulo-footer">Registro</p></strong>
+    <div id="m_error_r"></div>
     <form id="registro" @submit.prevent="register" class="text-left">
       <div class="form-group">
         <label for="name">Nombre</label>
-        <input type="text" class="form-control" id="name" placeholder="Nombre" v-model="name">
+        <input type="text" class="form-control" id="name" placeholder="Nombre" v-model="name" required>
       </div>
       <div class="form-group">
         <label for="surname">Apellidos</label>
-        <input type="text" class="form-control" id="surname" placeholder="Apellidos" v-model="surname">
+        <input type="text" class="form-control" id="surname" placeholder="Apellidos" v-model="surname" required>
       </div>
       <div class="form-group">
         <label for="birthdate">
           Fecha de nacimiento
         </label>
-        <input type="date" class="form-control" id="birthdate" placeholder="Fecha de nacimiento" v-model="birthdate">
+        <input type="date" class="form-control" id="birthdate" placeholder="Fecha de nacimiento" v-model="birthdate" required>
       </div>
       <div class="form-group">
         <label for="email">
           Email
         </label>
-        <input type="email" class="form-control" id="email" placeholder="Email" v-model="email">
+        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" v-model="email" required>
       </div>
       <div class="form-group">
         <label for="password">Contraseña</label>
@@ -78,7 +79,18 @@ export default {
         genre: this.genre
       })
       .then(response => {
+        console.log(response)
         this.$router.push({ name: 'Login' })
+      })
+      .catch(error => {
+        $('#m_error_r').empty()
+        $('#m_error_r').append(`
+            <br>
+            <div class="alert alert-danger" role="alert">
+              El email introducido está en uso
+            </div>
+          `)
+        //resolve(error)
       })
     }
   }

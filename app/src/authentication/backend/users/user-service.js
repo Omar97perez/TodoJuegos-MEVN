@@ -43,21 +43,28 @@ async function create(userParam, res) {
     
     // validate
     if (await User.findOne({ email: userParam.email })) {
-        throw 'email "' + userParam.email + '" is already taken'
-        // throw Error(`Email ${userParam.email} is already taken`)
+        // console.log("el email existe")
+        //throw 'email "' + userParam.email + '" is already taken'
+        throw Error(`El email ${userParam.email} ya está registrado`)
+        //res.status(400).send({message: "Los datos introducidos no son válidos"})
     }
-    // console.log("1234")
-    const user = new User(userParam)
-    // console.log(userParam)
+    else {
+        // console.log("1234")
+        const user = new User(userParam)
+        // console.log(userParam)
 
-    // hash password
-    if (userParam.password) {
-        user.password = bcrypt.hashSync(userParam.password)
+        // hash password
+        if (userParam.password) {
+            user.password = bcrypt.hashSync(userParam.password)
+        }
+        // console.log(user)
+        // save user
+        user.save((err) => {
+            if (err) return res.status(500).send({ message: `Error al crear el usuario: ${err}`})
+            return res.status(201).send( {message: "Usuario registrado correctamente"})
+        })
+        // user.save()
     }
-    // console.log(user)
-    // save user
-    await user.save()
-    // user.save()
 }
 
 async function update(id, userParam) {
@@ -72,7 +79,7 @@ async function update(id, userParam) {
 
     // hash password if it was entered
     if (userParam.password) {
-        console.log(userParam.password)
+        //console.log(userParam.password)
         user.password = bcrypt.hashSync(userParam.password, 10)
     }
     if(userParam.name) {

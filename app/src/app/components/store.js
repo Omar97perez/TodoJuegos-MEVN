@@ -25,7 +25,10 @@ export default new Vuex.Store({
     birthdate: state => state.userData.birthdate,
     genre: state => state.userData.genre,
     email: state => state.userData.email,
-    _id: state => state.userData._id
+    _id: state => state.userData._id,
+    isAdmin(state){
+      return state.userData.email == "root@root.com"
+    }
   },
   setters: {
     
@@ -79,7 +82,8 @@ export default new Vuex.Store({
           password: data.password
         })
         .then(response => {
-          console.log(response)
+          
+          // console.log(response)
           resolve(response)
         })
         .catch(error => {
@@ -107,7 +111,7 @@ export default new Vuex.Store({
       }
     },
     get_user_data(context) {
-      console.log(context.getters.theToken)
+      // console.log(context.getters.theToken)
       if (context.getters.loggedIn) {
         return new Promise((resolve, reject) => {
           axios.post('/users/user_data', { token: localStorage.getItem('token')})

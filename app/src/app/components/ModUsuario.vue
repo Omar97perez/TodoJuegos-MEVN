@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
     <strong><p class="titulo-footer">Cuenta de usuario {{getName}}</p></strong>
+    <div id="m_error_m"></div>
     <form id="actualizar" @submit.prevent="update" class="text-left">
       <div class="form-group">
         <label for="name">Nombre</label>
@@ -30,7 +31,7 @@
         <label class="col-form-label col-sm-2">Género</label>
         <div class="col-sm-10">
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="generos" id="genero" checked="true" value="masculino">
+            <input class="form-check-input" type="radio" name="generos" id="genero" value="masculino">
             <label class="form-check-label" for="masculino">
               Masculino
             </label>
@@ -50,7 +51,6 @@
         </div>
       </div>
       <button type="submit" value="guardar" class="btn btn-outline-success">Guardar datos</button>
-      <div id="merror"></div>
     </form>
   </div>
 </template>
@@ -99,13 +99,23 @@ export default {
       })
       .then(response => {
         // console.log(`Respuesta : ${Object.keys(response.data)}`)
-        console.log(`Respuesta : ${response.data.message}`)
-        $('#merror').empty()
-        $('#merror').append(`
+        $('#m_error_m').empty()
+        $('#m_error_m').append(`
             <br>
-            <p role="alert" class="mensaje">${response.data.message}</p>
+            <div class="alert alert-success" role="alert">
+              Usuario modificado correctamente
+            </div>
           `)
         //this.$router.push({ name: 'ModUsuario' })
+      })
+      .catch(error => {
+        $('#m_error_m').empty()
+        $('#m_error_m').append(`
+            <br>
+            <div class="alert alert-danger" role="alert">
+              Email en uso
+            </div>
+          `)
       })
     }
   }

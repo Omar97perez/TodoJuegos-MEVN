@@ -59,10 +59,7 @@ async function create(userParam, res) {
         }
         // console.log(user)
         // save user
-        user.save((err) => {
-            if (err) return res.status(500).send({ message: `Error al crear el usuario: ${err}`})
-            return res.status(201).send( {message: "Usuario registrado correctamente"})
-        })
+        await user.save()
         // user.save()
     }
 }

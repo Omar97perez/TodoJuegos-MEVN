@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const auth = require('../middlewares/auth')
+
 //Impotamos esquema de Productos dentro de la direcciçon models/Productos
 const Productos = require('../models/Productos');
 
@@ -21,7 +23,8 @@ router.get('/:id', async (req,res) => {
 
 
 //Introducir datos
-router.post('/', async (req,res) =>{
+router.post('/', auth ,async (req,res) =>{
+    
     const producto = new Productos(req.body);  //>Similar a Select * From x (SQL)
     //console.log(producto); //Imprime por consola lo contenido en la variable productos
     //res.json(producto); //Imprime en el navegador lo contenido en la variable producto
@@ -32,14 +35,14 @@ router.post('/', async (req,res) =>{
 });
 
 //Actualizar datos
-router.put('/:id', async (req,res) =>{
+router.put('/:id', auth, async (req,res) =>{
   await Productos.findByIdAndUpdate(req.params.id, req.body);
   res.json({
       status:'Producto actualizada'
   });
 });
 
-router.delete('/:id', async (req,res) =>{
+router.delete('/:id', auth, async (req,res) =>{
   await Productos.findByIdAndRemove(req.params.id);
   res.json({
       status:'Producto eliminado '

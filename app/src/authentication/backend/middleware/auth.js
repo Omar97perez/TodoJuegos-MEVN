@@ -1,7 +1,9 @@
 'use strict'
 
-const jwt = require('jwt')
-const moment = require('moment')
+//const jwt = require('jwt')
+
+const services = require('../_services/jwt')
+// const moment = require('moment')
 const config = require('../config.json')
 
 function isAdmin(req, res, next) {
@@ -14,7 +16,7 @@ function isAdmin(req, res, next) {
   if(payload.exp <= moment.unix()) {
     return res.status(401).send({ message: 'El Token ha expirado' })
   }
-  if(payload.sub != 'admin@admin.com') {
+  if(payload.sub != 'root@root.com') {
     return res.status(403).send({ message: 'No tienes autorización' })
   }
 

@@ -206,7 +206,8 @@ export default {
           body: JSON.stringify(this.Producto),
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'authorization': localStorage.getItem('token')
           }
         })
           .then(res => res.json())
@@ -221,7 +222,8 @@ export default {
           body: JSON.stringify(this.Producto),
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'authorization': localStorage.getItem('token')
           }
         })
           .then(res => res.json())
@@ -244,7 +246,8 @@ export default {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'authorization': localStorage.getItem('token')
         }
       })
         .then(res => res.json())

@@ -51,7 +51,10 @@
         </div>
       </div>
       <button type="submit" value="guardar" class="btn btn-outline-success">Guardar datos</button>
+      
     </form>
+    <br>
+    <button @click="deleteUser()" value="eliminar" class="btn btn-danger">Eliminar usuario</button>
   </div>
 </template>
 
@@ -88,6 +91,26 @@ export default {
     }
   },
   methods: {
+    deleteUser () {
+      //this.$router.push({ name: 'DeleteUser'})
+      this.$store.dispatch('deleteUser')
+      .then(response => {
+        console.log("afsdfasdfasdfasdfasdfasdfasdfasdfasd")
+        this.$store.dispatch('destroyToken')
+        this.$router.push({ name: 'Inicio'})
+        // this.$router.push({ name: 'Inicio'})
+      })
+      .catch(err => {
+        console.log("afsdfasdfasdfasdfasdfasdfasdfasdfasd")
+        $('#m_error_m').empty()
+        $('#m_error_m').append(`
+            <br>
+            <div class="alert alert-danger" role="alert">
+              No se ha podido eliminar el usuario.
+            </div>
+          `)
+      }) 
+    },
     update () {
       this.$store.dispatch('update', {
         name: this.name,

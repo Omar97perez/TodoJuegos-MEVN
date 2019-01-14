@@ -1,27 +1,37 @@
 'use strict'
 
-//const jwt = require('jwt')
-
 const services = require('../_services/jwt')
-// const moment = require('moment')
-const config = require('../config.json')
+const userService = require('../users/user-service')
 
-function isAdmin(req, res, next) {
-  if(!req.headers.authorization) {
-    return res.status(403).send({ message: 'No tienes autorización' })
-  }
-  const token = req.headers.authorization.split(' ')[1]
-  const payload = jwt.decode(token, config.secret)
-
-  if(payload.exp <= moment.unix()) {
-    return res.status(401).send({ message: 'El Token ha expirado' })
-  }
-  if(payload.sub != 'root@root.com') {
+function isAuth (req, res, next) {
+  if (!req.headers.authorization) {
     return res.status(403).send({ message: 'No tienes autorización' })
   }
 
-  req.user = payload.sub
-  next()
+  const token = req.headers.authorization // .split(' ')[1]
+  // console.log(token)
+  services.decodeToken(token)
+    .then(response => {
+      userService.getById(response)
+      .then(payload => {
+        // console.log(payload)
+        if(payload.email != "root@root.com") {
+          return res.status(403).send({ message: 'No tienes autorización' })
+        }
+        req.user = response
+        //next()
+      })
+      .catch(response => {
+        // console.log(response)
+        res.status(response.status)
+      })
+      req.user = response
+      next()
+      
+    })
+    .catch(response => {
+      res.status(response.status)
+    })
 }
 
 module.exports = isAuth

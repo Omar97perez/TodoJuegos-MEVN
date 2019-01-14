@@ -12,11 +12,8 @@ function isRoot (req, res, next) {
   console.log(token)
   services.decodeToken(token)
     .then(response => {
-      console.log("ISROOT:")
-      console.log(response)
       userService.getById(response)
       .then(payload => {
-        console.log(payload)
         if(payload.email != "root@root.com") {
           return res.status(403).send({ message: 'No tienes autorización' })
         }

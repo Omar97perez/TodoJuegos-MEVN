@@ -23,7 +23,7 @@ function decodeToken(token) {
           message: 'El token ha expirado'
         });
       }
-      console.log(`Sub: ${payload.sub}`)
+      // console.log(`Sub: ${payload.sub}`)
       resolve(payload.sub)
     } catch(err){
       reject({

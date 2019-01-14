@@ -52,15 +52,37 @@ function getById(req, res, next) {
 }
 
 function update(req, res, next) {
-    userService.update(req.params.id, req.body)
+    const token = req.headers.authorization
+    jwt.decodeToken(token)
+    .then(response => {
+        // console.log("faksdjfs")
+        // console.log(response)
+        // console.log(req.params.id)
+        if((response != req.params.id) && (response.email != "root@root.com")) {
+            return res.status(403).send({ message: 'No tienes autorización' })
+        }
+        userService.update(req.params.id, req.body)
         .then(() => res.status(201).json({ message: 'Usuario modificado correctamente' }))
         .catch(err => next(err));
+    })
+    .catch(err => next(err))
+    
 }
 
 function _delete(req, res, next) {
-    userService.delete(req.params.id)
-        .then(() => res.json({}))
+    const token = req.headers.authorization
+    jwt.decodeToken(token)
+    .then(response => {
+        if((response != req.params.id) && (response.email != "root@root.com")) {
+            return res.status(403).send({ message: 'No tienes autorización' })
+        }
+        userService.delete(req.params.id)
+        .then(() => { 
+            res.status(201).json({ message: 'Usuario eliminado correctamente'})
+        })
         .catch(err => next(err));
+    })
+    .catch(err => next(err))
 }
 
 function data_user(req, res, next) {

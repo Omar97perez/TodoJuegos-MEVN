@@ -93,23 +93,33 @@ export default new Vuex.Store({
     },
     destroyToken(context) {
       if (context.getters.loggedIn) {
+        localStorage.removeItem('token')
+        context.commit('destroyToken')
+        context.commit('cleanData')  
+      }
+    },
+    /* destroyToken(context) {
+      if (context.getters.loggedIn) {
         return new Promise((resolve, reject) => {
           axios.post('/Logout')
           .then(response => {
             localStorage.removeItem('token')
             context.commit('destroyToken')
             context.commit('cleanData')
+            console.log("1")
             resolve(response)
           })
           .catch(error => {
+            console.log("2")
             localStorage.removeItem('token')
             context.commit('destroyToken')
             context.commit('cleanData')
             reject(error)
           })
         })
+        
       }
-    },
+    }, */
     get_user_data(context) {
       // console.log(context.getters.theToken)
       if (context.getters.loggedIn) {
@@ -137,7 +147,7 @@ export default new Vuex.Store({
           birthdate: data.birthdate,
           genre: data.genre,
           password: data.password
-        })
+        }, { headers: { authorization: context.getters.theToken }})
         .then(response => {
           context.dispatch('get_user_data')
           resolve(response)
@@ -146,6 +156,38 @@ export default new Vuex.Store({
           reject(error)
         })
       })
+    },
+    deleteUser(context, data) {
+      return new Promise((resolve, reject) => {
+        axios.delete(`/users/${context.getters._id}`, { headers: { authorization: context.getters.theToken }})
+        .then(response => {
+          resolve(response)
+        })
+        .catch(error => reject(error))
+      })
+      
+/*         localStorage.removeItem('token')
+        context.commit('destroyToken')
+        context.commit('cleanData') */
+        
+       /*  axios.post('/Logout')
+          .then(response => {
+            localStorage.removeItem('token')
+            context.commit('destroyToken')
+            context.commit('cleanData')
+            resolve(response)
+          })
+          .catch(error => {
+            localStorage.removeItem('token')
+            context.commit('destroyToken')
+            context.commit('cleanData')
+            reject(error)
+          })  */
+        //  */
+        //localStorage.removeItem('token')
+        //context.dispatch('destroyToken')
+        //context.commit('cleanData')
+      
     }
 
   },

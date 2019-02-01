@@ -210,7 +210,7 @@ router.beforeEach((to, from, next) => {
       next('/');
     }
     else {
-      if(to.matched.some(record => record.meta.isAdmin) && (store.getters.name != "root")) {
+      if(to.matched.some(record => record.meta.isAdmin) && (store.getters.email != "root@root.com")) {
         console.log(store.getters.name )
         next('/');
       }

@@ -19,7 +19,6 @@ import Logout from './components/Logout.vue';
 import Registro from './components/Registro.vue';
 import Buscador from './components/Buscador.vue';
 import ModUsuario from './components/ModUsuario.vue';
-import Filtro from './components/Filtro.vue';
 import Videojuegos_Pc from './components/PaginasInteriores/VideoJuegos/Pc.vue';
 import Videojuegos_Ps4 from './components/PaginasInteriores/VideoJuegos/Ps4.vue';
 import Videojuegos_XboxOne from './components/PaginasInteriores/VideoJuegos/XboxOne.vue';
@@ -94,14 +93,6 @@ const routes = [
     name: 'ModUsuario',
     path: '/Usuario/ModUsuario',
     component: ModUsuario,
-  },
-  {
-    name: 'Filtro',
-    path: '/Productos/Filtro',
-    component: Filtro,
-    meta: {
-      isPublic: true
-    }
   },
   {
     name: 'Videojuegos_Pc',
@@ -219,7 +210,7 @@ router.beforeEach((to, from, next) => {
         next();
       }
     }
-    
+
   }
 })
 new Vue(Vue.util.extend({ router, store }, App)).$mount('#app');

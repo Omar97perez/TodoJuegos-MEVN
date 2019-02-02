@@ -39,28 +39,24 @@
           <label for="Categorias">Categorias</label>
           <div class="form-group row">
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="accion" value="accion">
+              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="accion" value="Acción">
               <label class="form-check-label" for="inlineRadio1">Accion</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="aventura" value="aventura">
+              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="aventura" value="Aventura">
               <label class="form-check-label" for="inlineRadio2">Aventura</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="deportes" value="deportes">
+              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="deportes" value="Deportes">
               <label class="form-check-label" for="inlineRadio3">Deportes</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="conduccion" value="conduccion">
+              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="conduccion" value="Conducción">
               <label class="form-check-label" for="inlineRadio4">Conducción</label>
             </div>
             <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="estrategia" value="estrategia">
+              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="estrategia" value="Estrategia">
               <label class="form-check-label" for="inlineRadio5">Estrategia</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" v-model="categoria" name="categorias" id="rpg" value="rpg">
-              <label class="form-check-label" for="inlineRadio6">RPG</label>
             </div>
             <div class="form-check form-check-inline">
               <input class="form-check-input" type="radio" v-model="categoria" name="categoria" id="todo" value="" checked>

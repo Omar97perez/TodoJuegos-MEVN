@@ -16,7 +16,7 @@ app.use(errorHandler)
 
 
 //Conexión con la base de datos, cuando se despliegue en servidor  se tendrá que cambiar la dirección
-mongoose.connect('mongodb://localhost/TodoJuegos')
+mongoose.connect('mongodb://172.16.15.14/TodoJuegos')
   .then(db => console.log('DB conectada')) //Imprimir DB conectada en caso de que todo vaya bien
   .catch(err => console.error(err)); //Imprime error si no se puedo conectar
 

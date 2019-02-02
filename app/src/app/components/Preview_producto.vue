@@ -7,11 +7,11 @@
         <div class="col-md-12">
 
         <!-- Inicio del cartel del producto -->
-        
+
         <div class="card">
 
             <div class="left">
-                
+
             </div>
 
             <div class="right">
@@ -21,19 +21,20 @@
                 <h1>{{prev.titulo}}</h1>
                 <h2>{{prev.precio}}€</h2>
 
-                <div class="detail">
-                    <p>{{prev.descripcion}}</p>
+                <div class="detail row">
+                  <p class="col-2"></p>
+                    <p class="col-8">{{prev.descripcion}}</p>
                 </div>
 
                 <button  @click="addToCart(prev._id)">ADD TO CART</button>
             </div>
-        
+
         </div>
 
         <!-- Fin del cartel de producto-->
 
         </div>
-        
+
     </div>
 </template>
 

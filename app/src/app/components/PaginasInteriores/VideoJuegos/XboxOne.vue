@@ -297,6 +297,7 @@
         </a>
       </div><!-- Final carousel -->
 
+<<<<<<< HEAD
       <h2>Juegos de <b>rpg</b></h2>
       <div id="carouselrpg" class="carousel slide" data-ride="carousel" data-interval="0">
         <!-- Indicador del carousel -->
@@ -344,6 +345,8 @@
           <i class="fa fa-angle-right"></i>
         </a>
       </div><!-- Final carousel -->
+=======
+>>>>>>> CorrecionErrores
   </div>
   <!-- Fin Página de Juegos -->
 </div>

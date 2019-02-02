@@ -297,56 +297,6 @@
         </a>
       </div><!-- Final carousel -->
 
-<<<<<<< HEAD
-      <h2>Juegos de <b>rpg</b></h2>
-      <div id="carouselrpg" class="carousel slide" data-ride="carousel" data-interval="0">
-        <!-- Indicador del carousel -->
-        <ol class="carousel-indicators">
-          <li data-target="#carouselrpg" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselrpg" data-slide-to="1"></li>
-          <li data-target="#carouselrpg" data-slide-to="2"></li>
-        </ol>
-        <!-- Objetos del carousel -->
-        <div class="carousel-inner">
-          <div class="item carousel-item active">
-            <div class="row">
-              <Item
-              v-for="item in Productos_Switch_rpg"
-              :key="item._id"
-              :invId="item._id"
-              :name="item.titulo"
-              :image="item.foto"
-              :price="item.precio"
-              :offer="item.oferta"/>
-            </div>
-          </div>
-
-          <div class="item carousel-item" v-for="a, index in Productos_Switch_rpg" v-if="index % 4 == 0 && index > 3">
-              <div class="row">
-                <!-- Objetos del carousel-->
-                <Item
-                  v-for="(item, index) in Productos_Switch_rpg.slice(index, index+4)"
-                  :key="item._id"
-                  :invId="item._id"
-                  :name="item.titulo"
-                  :image="item.foto"
-                  :price="item.precio"
-                  :offer="item.oferta"/>
-              </div>
-            </div>
-
-        </div>
-
-        <!-- Control del carousel -->
-        <a class="carousel-control left carousel-control-prev" href="#carouselrpg" data-slide="prev">
-          <i class="fa fa-angle-left"></i>
-        </a>
-        <a class="carousel-control right carousel-control-next" href="#carouselrpg" data-slide="next">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </div><!-- Final carousel -->
-=======
->>>>>>> CorrecionErrores
   </div>
   <!-- Fin Página de Juegos -->
 </div>

@@ -205,15 +205,12 @@
       <div id="carouselcond" class="carousel slide" data-ride="carousel" data-interval="0">
         <!-- Indicador del carousel -->
         <ol class="carousel-indicators">
-<<<<<<< HEAD
           <li data-target="#carouselcond" data-slide-to="0" class="active"></li>
           <li data-target="#carouselcond" data-slide-to="1"></li>videojuego
           <li data-target="#carouselcond" data-slide-to="2"></li>
-=======
           <li data-target="#carouselxbox" data-slide-to="0" class="active"></li>
           <li data-target="#carouselxbox" data-slide-to="1"></li>
           <li data-target="#carouselxbox" data-slide-to="2"></li>
->>>>>>> CorrecionErrores
         </ol>
         <!-- Objetos del carousel -->
         <div class="carousel-inner">

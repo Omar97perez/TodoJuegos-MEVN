@@ -19,7 +19,7 @@
                 <img class="prod-img" :src="prev.foto">
 
                 <h1>{{prev.titulo}}</h1>
-                <h2>{{prev.precio}}€</h2>
+                <h2>{{prev.oferta}}€</h2>
 
                 <div class="detail row">
                   <p class="col-2"></p>

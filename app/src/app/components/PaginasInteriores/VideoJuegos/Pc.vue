@@ -300,8 +300,8 @@
         </a>
       </div><!-- Final carousel -->
   <!-- Fin Página de Juegos -->
-</div>
-
+    </div>
+  </div>
 </template>
 
 <script>
